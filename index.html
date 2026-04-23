@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Zex Digital - AI Website & WhatsApp Bot Services</title>
+
+<meta name="description" content="Zex Digital provides AI website building, WhatsApp automation bots, and digital solutions for businesses.">
+
+<meta name="keywords" content="Zex Digital, AI website builder, WhatsApp bot India, automation services">
+
+<meta name="author" content="Zex Digital">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23000'/%3E%3Cpolygon points='40,20 70,20 50,50 70,50 40,80 50,55 30,55' fill='%23fff'/%3E%3C/svg%3E" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --white:#FFFFFF; --black:#000000;
+    --text-primary:#000000; --text-secondary:#666666; --text-muted:#888888;
+    --border:#EAEAEA; --divider:#F3F3F3; --section-alt:#F9F9F9;
+    --btn-bg:#000000; --btn-text:#FFFFFF; --btn-hover:#1a1a1a;
+    --admin-bg:#0f0f1a; --admin-sidebar:#1a1a2e;
+    --bg:#ffffff; --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text-primary);-webkit-font-smoothing:antialiased;line-height:1.5}
+  body.dark-mode{--bg:#0d0d0d;--card:#111111;--text-primary:#ffffff;--text-secondary:#bbbbbb;--text-muted:#888888;--border:#222222;--divider:#1a1a1a;--section-alt:#111111;--white:#0d0d0d}
+  body.dark-mode .navbar{background:rgba(15,15,15,0.92);border-color:#222}
+  body.dark-mode .sidebar{background:#111;border-color:#222}
+  body.dark-mode .btn-secondary{color:#fff;border-color:#333}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  input,textarea,select{font-family:inherit}
+  i[data-lucide]{stroke-width:1.5;width:20px;height:20px;flex-shrink:0}
+  .container{max-width:1200px;margin:0 auto;padding:0 clamp(1rem,5vw,4rem)}
+  .section{padding:6rem 0}
+  .section-alt{background:var(--section-alt)}
+  .label{font-size:.8rem;font-weight:500;color:var(--text-muted);letter-spacing:.04em;text-transform:uppercase}
+  .section-title{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;letter-spacing:-.02em;color:var(--text-primary)}
+  .section-sub{color:var(--text-secondary);font-size:1rem;line-height:1.7;max-width:650px;margin:1rem auto 0;text-align:center}
+  .center{text-align:center}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;padding:.7rem 1.4rem;border-radius:9999px;transition:all .25s cubic-bezier(.25,.46,.45,.94);cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
+  .btn-primary{background:var(--btn-bg);color:var(--btn-text)}
+  .btn-primary:hover{background:var(--btn-hover);transform:scale(1.04)}
+  .btn-secondary{background:transparent;color:var(--text-primary);border-color:var(--border)}
+  .btn-secondary:hover{border-color:var(--text-primary);transform:translateY(-2px)}
+  .pill{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--border);border-radius:9999px;padding:.35rem 1rem;font-size:.85rem;color:var(--text-secondary);background:transparent}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:transform .25s cubic-bezier(.25,.46,.45,.94),box-shadow .25s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.07)}
+
+  /* Navbar */
+  .navbar{position:fixed;top:1rem;left:50%;transform:translateX(-50%);width:calc(100% - 2rem);max-width:1100px;height:58px;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:9999px;box-shadow:0 4px 24px rgba(0,0,0,.06);z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 1rem;transition:box-shadow .25s ease}
+  .navbar-left{display:flex;align-items:center;gap:.6rem}
+  .nav-hamburger{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--text-primary)}
+  .nav-hamburger:hover{background:var(--divider)}
+  .logo-box{width:36px;height:36px;background:#000;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center}
+  .logo-box i{width:20px;height:20px;stroke:#fff;fill:#fff}
+  .nav-brand{font-weight:700;font-size:1rem;color:var(--text-primary)}
+  .nav-center{display:none;align-items:center;gap:1.5rem}
+  .nav-link{font-size:.9rem;color:var(--text-secondary);font-weight:500;transition:color .2s}
+  .nav-link.active,.nav-link:hover{color:var(--text-primary);font-weight:600}
+  .nav-right{display:flex;align-items:center;gap:.5rem}
+  .nav-avatar{width:34px;height:34px;border-radius:50%;cursor:pointer;border:1.5px solid var(--border);object-fit:cover}
+  @media(min-width:768px){.nav-center{display:flex}}
+
+  /* Sidebar */
+  .sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1999;opacity:0;pointer-events:none;transition:opacity .3s ease}
+  .sidebar-overlay.open{opacity:1;pointer-events:auto}
+  .sidebar{position:fixed;left:-300px;top:0;width:280px;height:100vh;background:#fff;border-right:1px solid var(--border);z-index:2000;padding:2rem 1.5rem;transition:left .3s cubic-bezier(.25,.46,.45,.94);overflow-y:auto;display:flex;flex-direction:column;gap:.5rem}
+  .sidebar.open{left:0}
+  .sidebar-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+  .sidebar-divider{height:1px;background:var(--border);margin:.75rem 0}
+  .sidebar-link{display:flex;align-items:center;gap:.75rem;padding:.75rem .5rem;border-radius:8px;color:var(--text-primary);font-size:.95rem;font-weight:500;cursor:pointer;transition:background .2s}
+  .sidebar-link:hover{background:var(--divider)}
+  .sidebar-link i{width:18px;height:18px}
+  .sidebar-close{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px}
+  .sidebar-close:hover{background:var(--divider)}
+
+  /* Pages */
+  .page{display:none;min-height:100vh;padding-top:100px;padding-bottom:4rem}
+  .page.active{display:block}
+  body.admin-open .page{padding-top:0}
+
+  /* Hero */
+  #page-home .hero{min-height:calc(100vh - 80px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem clamp(1rem,5vw,4rem)}
+  .hero-badge{margin-bottom:1.5rem}
+  .hero-title{font-size:clamp(2.5rem,5vw,5rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;max-width:900px;color:var(--text-primary)}
+  .hero-sub{font-size:1.25rem;color:var(--text-secondary);font-weight:400;margin-top:1rem}
+  .hero-desc{font-size:1rem;color:var(--text-muted);max-width:600px;line-height:1.7;margin-top:1.25rem}
+  .hero-cta{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;justify-content:center}
+  @media(max-width:600px){.hero-cta{flex-direction:column;width:100%;max-width:300px}.hero-cta .btn{width:100%;justify-content:center}}
+
+  /* Grids */
+  .grid-4{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:3rem}
+  @media(min-width:768px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+  .icon-circle{width:52px;height:52px;border-radius:50%;background:var(--divider);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+  .icon-circle i{width:22px;height:22px}
+  .card-title{font-size:1.125rem;font-weight:600;margin-bottom:.5rem;color:var(--text-primary)}
+  .card-text{color:var(--text-secondary);font-size:.95rem;line-height:1.6}
+
+  /* Why us */
+  .two-col{display:grid;grid-template-columns:1fr;gap:3rem;align-items:start}
+  @media(min-width:768px){.two-col{grid-template-columns:1fr 1fr}}
+  .why-list{list-style:none;display:flex;flex-direction:column}
+  .why-list li{display:flex;align-items:center;gap:.75rem;padding:1rem 0;border-bottom:1px solid var(--border);color:var(--text-primary);font-size:.95rem}
+  .why-list li:last-child{border-bottom:none}
+  .why-list li i{color:var(--text-primary);width:18px;height:18px}
+
+  /* How it works */
+  .steps{display:flex;flex-direction:column;gap:1.5rem;margin-top:3rem;align-items:center}
+  @media(min-width:768px){.steps{flex-direction:row;justify-content:center;gap:1rem;align-items:stretch}}
+  .step-card{text-align:center;flex:1;max-width:320px}
+  .step-num{width:48px;height:48px;background:#000;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 1rem}
+  .step-arrow{display:none;color:#CCC;align-self:center}
+  @media(min-width:768px){.step-arrow{display:flex}}
+
+  /* Services */
+  .services-2col{display:grid;grid-template-columns:1fr;gap:3rem;margin-top:3rem}
+  @media(min-width:1024px){.services-2col{grid-template-columns:1fr 1fr}}
+  .service-col-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;font-size:1.25rem;font-weight:700}
+  .service-col-desc{color:var(--text-secondary);margin-bottom:1.5rem}
+  .service-cards{display:flex;flex-direction:column;gap:1.25rem}
+  .service-card{position:relative}
+  .service-card.popular{box-shadow:0 16px 50px rgba(0,0,0,.1);border-color:#000}
+  .service-badge{position:absolute;top:-12px;right:1.5rem;background:#fff;border:1px solid var(--border);border-radius:9999px;padding:.25rem .8rem;font-size:.75rem;font-weight:500;color:var(--text-secondary)}
+  .service-badge.dark{background:#000;color:#fff;border-color:#000;font-weight:600}
+  .service-price{display:flex;align-items:baseline;gap:.4rem;margin:1rem 0}
+  .service-price-from{font-size:.85rem;color:var(--text-muted)}
+  .service-price-num{font-size:2rem;font-weight:800;letter-spacing:-.02em}
+  .service-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin:1rem 0 1.5rem}
+  .service-features li{display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:var(--text-secondary)}
+  .service-features li i{width:16px;height:16px;color:#000}
+  body.dark-mode .service-features li i{color:#fff}
+  .service-card .btn-primary{width:100%;justify-content:center}
+
+  /* Team */
+  .team-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:3rem;justify-content:center;max-width:1100px;margin-left:auto;margin-right:auto}
+  @media(min-width:768px){.team-grid{grid-template-columns:1fr 1fr}}
+  .team-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2.5rem 2rem;text-align:center;transition:transform .3s ease,box-shadow .3s ease}
+  .team-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,.08)}
+  .team-avatar{width:100px;height:100px;border-radius:50%;border:3px solid var(--border);margin:0 auto 1rem;object-fit:cover}
+  .team-name{font-size:1.25rem;font-weight:700;margin-bottom:.25rem}
+  .team-role{font-size:.875rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:1rem}
+  .team-divider{height:1px;background:var(--border);margin:1rem 0}
+  .team-desc{color:var(--text-secondary);font-size:.95rem;line-height:1.6;margin-bottom:1.25rem}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
+  .skill-tag{border:1px solid var(--border);border-radius:9999px;padding:.3rem .75rem;font-size:.75rem;color:#444}
+  body.dark-mode .skill-tag{color:#bbb}
+
+  /* Reviews */
+  .reviews-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:3rem}
+  @media(min-width:768px){.reviews-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:1024px){.reviews-grid{grid-template-columns:1fr 1fr 1fr}}
+  .review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;transition:all .25s}
+  .review-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.07)}
+  .review-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+  .review-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover}
+  .review-name{font-size:.95rem;font-weight:600}
+  .review-date{font-size:.8rem;color:var(--text-muted)}
+  .review-stars{display:flex;gap:.15rem;margin-bottom:.5rem}
+  .review-stars i{width:16px;height:16px}
+  .star-filled{fill:#000;stroke:#000}
+  body.dark-mode .star-filled{fill:#fff;stroke:#fff}
+  .star-empty{stroke:#CCC;fill:none}
+  .review-text{font-size:.9rem;color:var(--text-secondary);line-height:1.6}
+  .review-bottom{margin-top:.75rem;color:#CCC}
+  .review-form{background:var(--section-alt);border-radius:20px;padding:2.5rem;max-width:600px;margin:3rem auto 0}
+  .review-form h3{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;font-size:1.25rem}
+  .star-selector{display:flex;gap:.4rem;margin:1rem 0}
+  .star-selector i{width:32px;height:32px;cursor:pointer;stroke:#CCC;fill:none;transition:all .15s}
+  .star-selector i.hovered,.star-selector i.selected{fill:#000;stroke:#000}
+  body.dark-mode .star-selector i.hovered,body.dark-mode .star-selector i.selected{fill:#fff;stroke:#fff}
+  .read-more{color:var(--text-primary);font-weight:600;cursor:pointer;font-size:.85rem;margin-left:.25rem}
+
+  /* Projects */
+  .projects-wrap{position:relative;margin-top:3rem}
+  .projects-scroll{display:flex;gap:1.5rem;padding:2rem .5rem;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none}
+  .projects-scroll::-webkit-scrollbar{display:none}
+  .project-card{flex-shrink:0;width:300px;height:400px;border-radius:16px;overflow:hidden;position:relative;cursor:pointer;background:linear-gradient(135deg,#1a1a1a,#3a3a3a);display:flex;align-items:center;justify-content:center;color:#fff}
+  .project-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+  .project-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 60%);opacity:0;transition:opacity .3s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;color:#fff}
+  .project-card:hover .project-overlay{opacity:1}
+  .project-name{font-weight:700;font-size:1rem;margin-bottom:.25rem}
+  .project-tech{font-size:.8rem;color:#CCC}
+  .project-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1.5px solid #000;background:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:all .2s}
+  .project-arrow:hover{background:#000;color:#fff}
+  body.dark-mode .project-arrow{background:#111;color:#fff;border-color:#fff}
+  .project-arrow.left{left:-12px}
+  .project-arrow.right{right:-12px}
+  @media(min-width:768px){.project-arrow{display:flex}}
+
+  /* Contact */
+  .contact-map{width:100%;height:420px;border:0;border-radius:16px;margin-top:3rem}
+  .contact-loc{display:flex;align-items:center;gap:.5rem;justify-content:center;margin-top:1rem;color:var(--text-secondary)}
+  .social-section{background:var(--section-alt);border-radius:20px;padding:3rem;margin-top:3rem;text-align:center}
+  .social-row{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+  .social-icon{width:56px;height:56px;border-radius:50%;border:1.5px solid #000;background:#fff;display:flex;align-items:center;justify-content:center;color:#000;transition:all .2s}
+  .social-icon:hover{background:#000;color:#fff}
+  body.dark-mode .social-icon{background:#111;color:#fff;border-color:#fff}
+  body.dark-mode .social-icon:hover{background:#fff;color:#000}
+
+  /* Auth pages */
+  .auth-card{max-width:420px;margin:1rem auto 0;padding:2.5rem 2rem;border:1px solid var(--border);border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,.06);background:var(--card)}
+  .auth-head{text-align:center;margin-bottom:1.5rem}
+  .auth-head h1{font-size:1.5rem;font-weight:700;margin:.75rem 0 .25rem}
+  .auth-head p{color:var(--text-muted);font-size:.9rem}
+  .form-field{margin-bottom:1rem}
+  .form-label{display:flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:500;margin-bottom:.4rem;color:var(--text-primary)}
+  .form-label i{width:14px;height:14px}
+  .form-input-wrap{position:relative}
+  .form-input{width:100%;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-size:.95rem;background:var(--card);color:var(--text-primary);transition:border-color .2s}
+  .form-input:focus{border-color:#000;outline:none}
+  body.dark-mode .form-input:focus{border-color:#fff}
+  .pwd-toggle{position:absolute;right:.75rem;top:50%;transform:translateY(-50%);width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);background:transparent;border:none}
+  .form-error{color:#d32f2f;font-size:.85rem;margin-top:.5rem;text-align:center;min-height:1.2em}
+  .divider-or{display:flex;align-items:center;gap:.75rem;margin:1.25rem 0;color:var(--text-muted);font-size:.85rem}
+  .divider-or::before,.divider-or::after{content:'';flex:1;height:1px;background:var(--border)}
+  .google-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;padding:.75rem;border:1.5px solid var(--border);border-radius:9999px;background:#fff;color:#000;font-weight:600;font-size:.9rem;transition:all .2s;position:relative}
+  .google-btn.disabled{opacity:.4;pointer-events:none;cursor:not-allowed}
+  .google-btn:hover:not(.disabled){border-color:#000}
+  body.dark-mode .google-btn{background:#fff;color:#000}
+  .auth-bottom{text-align:center;margin-top:1.25rem;font-size:.9rem;color:var(--text-secondary)}
+  .auth-bottom a{color:var(--text-primary);font-weight:600;margin-left:.25rem}
+  .shake{animation:shake .5s}
+  @keyframes shake{0%{transform:translateX(0)}20%{transform:translateX(-10px)}40%{transform:translateX(10px)}60%{transform:translateX(-8px)}80%{transform:translateX(8px)}100%{transform:translateX(0)}}
+
+  /* Profile */
+  .profile{max-width:600px;margin:0 auto;text-align:center}
+  .profile-avatar-wrap{position:relative;display:inline-block;margin-bottom:1rem}
+  .profile-avatar{width:90px;height:90px;border-radius:50%;border:3px solid var(--border);object-fit:cover}
+  .profile-edit-btn{position:absolute;bottom:0;right:0;width:32px;height:32px;border-radius:50%;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;border:2px solid #fff;cursor:pointer}
+  .profile-edit-btn i{width:14px;height:14px;color:#fff}
+  .profile-name{font-size:1.5rem;font-weight:700;margin-top:.5rem}
+  .profile-email{color:var(--text-muted);margin-top:.25rem}
+  .profile-actions{margin-top:2rem;display:flex;flex-direction:column;gap:.75rem;align-items:center}
+  .profile-section{margin-top:2rem;text-align:left;background:var(--section-alt);border-radius:16px;padding:1.5rem}
+  .profile-section h3{margin-bottom:.75rem;font-size:1rem}
+  .profile-info{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.9rem}
+  .profile-info:last-child{border-bottom:none}
+  .profile-info span:first-child{color:var(--text-muted)}
+
+  /* Modal */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9000;display:none;align-items:center;justify-content:center;padding:1rem}
+  .modal-overlay.open{display:flex}
+  .modal{background:var(--card);border-radius:20px;padding:2.5rem;max-width:480px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
+  .modal-close{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--divider)}
+  .modal h2{margin-bottom:1rem;font-size:1.25rem}
+  .modal-success{color:#16a34a;font-weight:600;text-align:center;padding:1rem;display:none}
+  .modal textarea.form-input{min-height:100px;resize:vertical;font-family:inherit}
+
+  /* Footer */
+  .footer{background:#000;color:#fff;padding:4rem 2rem 2rem;margin-top:4rem}
+  .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:2.5rem}
+  @media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+  .footer-brand{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+  .footer-brand .logo-box{background:#fff;color:#000}
+  .footer-brand .logo-box i{stroke:#000;fill:#000}
+  .footer-brand-name{font-weight:700;font-size:1.1rem;color:#fff}
+  .footer-tag{color:#888;margin-bottom:.25rem}
+  .footer-sub{color:#666;font-size:.9rem}
+  .footer-heading{color:#888;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem;font-weight:600}
+  .footer-links{display:flex;flex-direction:column;gap:.6rem}
+  .footer-links a{color:#fff;font-size:.9rem;transition:color .2s}
+  .footer-links a:hover{color:#ccc}
+  .footer-bottom{max-width:1200px;margin:2rem auto 0;border-top:1px solid #222;padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.8rem;color:#666;align-items:center}
+  .footer-made{display:flex;align-items:center;gap:.4rem}
+  .footer-made i{color:#e11d48;width:14px;height:14px;fill:#e11d48}
+  .footer-trademark{width:100%;text-align:center;color:#444;font-size:.78rem;margin-top:.75rem}
+
+  /* Animations */
+  .anim-hidden{opacity:0;transform:translateY(40px);transition:opacity .6s ease,transform .6s ease}
+  .anim-visible{opacity:1;transform:translateY(0)}
+  .stagger-grid > *:nth-child(1){transition-delay:0ms}
+  .stagger-grid > *:nth-child(2){transition-delay:120ms}
+  .stagger-grid > *:nth-child(3){transition-delay:240ms}
+  .stagger-grid > *:nth-child(4){transition-delay:360ms}
+  .stagger-grid > *:nth-child(5){transition-delay:480ms}
+  .stagger-grid > *:nth-child(6){transition-delay:600ms}
+
+  /* Admin */
+  body.admin-open .navbar,body.admin-open .footer,body.admin-open .sidebar,body.admin-open .sidebar-overlay{display:none!important}
+  #page-admin{padding:0;background:#F4F4F5;min-height:100vh}
+  body.admin-open #page-admin{display:flex}
+  .admin-sidebar{position:fixed;left:0;top:0;width:260px;height:100vh;background:var(--admin-sidebar);color:#fff;padding:1.5rem;display:flex;flex-direction:column;gap:.25rem;overflow-y:auto;z-index:10}
+  .admin-brand{font-weight:700;font-size:1.1rem;color:#fff}
+  .admin-brand-sub{color:#888;font-size:.8rem;margin-bottom:1rem}
+  .admin-divider{height:1px;background:rgba(255,255,255,.1);margin:.5rem 0}
+  .admin-nav{display:flex;align-items:center;gap:.6rem;padding:.6rem .75rem;border-radius:8px;color:#ccc;font-size:.9rem;cursor:pointer;transition:background .15s}
+  .admin-nav:hover{background:rgba(255,255,255,.08);color:#fff}
+  .admin-nav.active{background:rgba(255,255,255,.12);color:#fff}
+  .admin-nav i{width:18px;height:18px}
+  .admin-exit{margin-top:auto;color:#f87171}
+  .admin-main{margin-left:260px;flex:1;padding:2rem;min-height:100vh}
+  @media(max-width:768px){.admin-sidebar{transform:translateX(-100%);transition:transform .3s}.admin-sidebar.open{transform:translateX(0)}.admin-main{margin-left:0;padding:1rem;padding-top:4rem}.admin-mobile-toggle{display:flex!important}}
+  .admin-mobile-toggle{display:none;position:fixed;top:1rem;left:1rem;width:40px;height:40px;background:#000;color:#fff;border-radius:8px;align-items:center;justify-content:center;z-index:20}
+  .admin-panel{display:none;background:#fff;border-radius:16px;padding:2rem;margin-bottom:1.5rem}
+  .admin-panel.active{display:block}
+  .admin-panel h2{margin-bottom:1.5rem;font-size:1.5rem}
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+  .stat-card{border:1px solid #EAEAEA;border-radius:12px;padding:1.5rem}
+  .stat-num{font-size:2rem;font-weight:800;letter-spacing:-.02em}
+  .stat-label{color:#888;font-size:.85rem;margin-top:.25rem;text-transform:uppercase;letter-spacing:.04em}
+  .admin-field{margin-bottom:1.25rem}
+  .admin-field label{display:block;font-weight:600;font-size:.85rem;margin-bottom:.4rem}
+  .admin-field input,.admin-field textarea{width:100%;padding:.6rem .8rem;border:1.5px solid #EAEAEA;border-radius:8px;font-size:.9rem}
+  .admin-field textarea{min-height:80px;resize:vertical}
+  .admin-row{display:flex;gap:.5rem;align-items:center;margin-bottom:.5rem}
+  .admin-save-btn{background:#000;color:#fff;padding:.5rem 1rem;border-radius:9999px;font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:.4rem;cursor:pointer}
+  .admin-saved{color:#16a34a;font-size:.8rem;margin-left:.5rem;font-weight:500}
+  .admin-table{width:100%;border-collapse:collapse;font-size:.9rem}
+  .admin-table th,.admin-table td{padding:.75rem;text-align:left;border-bottom:1px solid #EAEAEA}
+  .admin-table th{background:#F9F9F9;font-weight:600}
+  .admin-section{border:1px solid #EAEAEA;border-radius:12px;padding:1.25rem;margin-bottom:1rem}
+  .admin-section h3{margin-bottom:.75rem;font-size:1rem}
+  .admin-feature-row{display:flex;gap:.5rem;margin-bottom:.5rem;align-items:center}
+  .admin-feature-row input{flex:1;padding:.4rem .6rem;border:1px solid #EAEAEA;border-radius:6px;font-size:.85rem}
+  .admin-icon-btn{width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;background:#F9F9F9;cursor:pointer}
+  .admin-icon-btn:hover{background:#EAEAEA}
+  .admin-icon-btn i{width:16px;height:16px}
+  .toggle-switch{display:inline-block;width:52px;height:28px;background:#CCC;border-radius:9999px;position:relative;cursor:pointer;transition:background .25s}
+  .toggle-switch.on{background:#000}
+  .toggle-switch::after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;background:#fff;border-radius:50%;transition:left .25s ease}
+  .toggle-switch.on::after{left:27px}
+
+  /* Terms */
+  .terms-content{max-width:800px;margin:2rem auto 0;font-size:.95rem;line-height:1.8;color:var(--text-secondary)}
+  .terms-content h3{color:var(--text-primary);margin:1.5rem 0 .5rem;font-size:1.1rem}
+
+  /* Floating chat */
+  .float-chat{position:fixed;bottom:1.5rem;right:1.5rem;width:58px;height:58px;border-radius:50%;background:#000;color:#fff;display:none;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:8000;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+  .float-chat:hover{transform:scale(1.08);box-shadow:0 12px 40px rgba(0,0,0,.35)}
+  .float-chat.show{display:flex}
+  .float-chat i{width:26px;height:26px;color:#fff}
+  body.admin-open .float-chat{display:none!important}
+
+  /* Status pill */
+  .status-pill{display:inline-block;padding:.2rem .6rem;border-radius:9999px;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+  .status-pending{background:#fef3c7;color:#92400e}
+  .status-confirmed{background:#d1fae5;color:#065f46}
+  .status-rejected{background:#fee2e2;color:#991b1b}
+  .booking-row{padding:1rem;border:1px solid var(--border);border-radius:12px;margin-bottom:.75rem;background:var(--card)}
+  .booking-row .br-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+  .booking-row .br-svc{font-weight:600}
+  .booking-row .br-meta{font-size:.85rem;color:var(--text-muted);margin:.25rem 0}
+  .booking-row .br-msg{font-size:.9rem;color:var(--text-secondary);margin-top:.5rem;line-height:1.5}
+
+  /* Hide pages by default */
+  .page{display:none}
+  .page.active{display:block}
+  body.admin-open #page-admin{display:flex}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-left">
+    <button class="nav-hamburger" onclick="toggleSidebar(true)" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    <a href="#home" class="navbar-left" style="text-decoration:none;display:flex;align-items:center;gap:.6rem">
+      <span class="logo-box" id="brand-logo-box"><i data-lucide="zap"></i></span>
+      <span class="nav-brand">ZEX Digital</span>
+    </a>
+  </div>
+  <div class="nav-center" id="nav-center">
+    <a href="#home" class="nav-link" data-nav="home">Home</a>
+    <a href="#services" class="nav-link" data-nav="services">Services</a>
+    <a href="#team" class="nav-link" data-nav="team">Team</a>
+    <a href="#projects" class="nav-link" data-nav="projects">Projects</a>
+    <a href="#reviews" class="nav-link" data-nav="reviews">Reviews</a>
+    <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+  </div>
+  <div class="nav-right" id="nav-right">
+    <a href="#login" class="nav-link" id="nav-login">Login</a>
+    <a href="#signup" class="btn btn-primary" id="nav-signup">Get Started</a>
+  </div>
+</nav>
+
+<!-- SIDEBAR -->
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar(false)"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <div style="display:flex;align-items:center;gap:.5rem"><span class="logo-box"><i data-lucide="zap"></i></span><span class="nav-brand">ZEX Digital</span></div>
+    <button class="sidebar-close" onclick="toggleSidebar(false)" aria-label="Close menu"><i data-lucide="x"></i></button>
+  </div>
+  <div class="sidebar-divider"></div>
+  <a class="sidebar-link" href="#home" onclick="toggleSidebar(false)"><i data-lucide="home"></i>Home</a>
+  <a class="sidebar-link" href="#services" onclick="toggleSidebar(false)"><i data-lucide="globe"></i>Services</a>
+  <a class="sidebar-link" href="#team" onclick="toggleSidebar(false)"><i data-lucide="users"></i>Team</a>
+  <a class="sidebar-link" href="#projects" onclick="toggleSidebar(false)"><i data-lucide="layout-dashboard"></i>Projects</a>
+  <a class="sidebar-link" href="#reviews" onclick="toggleSidebar(false)"><i data-lucide="message-square"></i>Reviews</a>
+  <a class="sidebar-link" href="#contact" onclick="toggleSidebar(false)"><i data-lucide="map-pin"></i>Contact</a>
+  <a class="sidebar-link" href="#terms" onclick="toggleSidebar(false)"><i data-lucide="file-text"></i>Terms</a>
+  <div class="sidebar-divider"></div>
+  <div id="sidebar-auth"></div>
+</aside>
+
+<!-- ===== PAGES ===== -->
+
+<!-- HOME -->
+<div id="page-home" class="page">
+  <section class="hero container">
+    <div class="hero-badge anim-hero"><span class="pill"><i data-lucide="zap" style="width:14px;height:14px"></i><span id="hero-badge-text">India's Smartest Digital Agency</span></span></div>
+    <h1 class="hero-title anim-hero" id="main-headline" ondblclick="openAdminModal()"><span id="hero-headline">Building Brands with Intelligence</span></h1>
+    <p class="hero-sub anim-hero" id="hero-subheadline">Connect · Create · Transform</p>
+    <p class="hero-desc anim-hero" id="hero-description">We design and build high-performance websites and offline apps for businesses that want to stand out. Transparent pricing. Custom solutions. Real results.</p>
+    <div class="hero-cta anim-hero">
+      <a href="#services" class="btn btn-primary">See Our Services <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+      <a href="#team" class="btn btn-secondary">Meet the Team</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="center"><div class="label">ABOUT</div><h2 class="section-title" style="margin-top:.5rem">Who We Are</h2><p class="section-sub">ZEX Digital is a next-generation digital agency founded on one belief — that every business deserves a powerful digital presence. We combine creativity with technology to deliver websites and apps that don't just look good. They perform.</p></div>
+      <div class="grid-4 stagger-grid" id="about-grid">
+        <div class="card anim-hidden"><div class="icon-circle"><i data-lucide="building-2"></i></div><h3 class="card-title" data-about="card1-title">Who We Are</h3><p class="card-text" data-about="card1-text">ZEX Digital is a creative and technical agency helping businesses grow their digital footprint with custom-built solutions.</p></div>
+        <div class="card anim-hidden"><div class="icon-circle"><i data-lucide="settings-2"></i></div><h3 class="card-title" data-about="card2-title">What We Do</h3><p class="card-text" data-about="card2-text">We build fully custom websites and offline business applications tailored to your exact requirements — from scratch, with no templates.</p></div>
+        <div class="card anim-hidden"><div class="icon-circle"><i data-lucide="target"></i></div><h3 class="card-title" data-about="card3-title">The Problem</h3><p class="card-text" data-about="card3-text">Small and medium businesses often pay too much for poor quality. ZEX Digital solves this with transparent pricing and professional delivery.</p></div>
+        <div class="card anim-hidden"><div class="icon-circle"><i data-lucide="trending-up"></i></div><h3 class="card-title" data-about="card4-title">Our Impact</h3><p class="card-text" data-about="card4-text">From local shops to scaling online brands, we have helped businesses grow, convert, and compete in the digital world — project by project.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container two-col">
+      <div class="anim-hidden">
+        <div class="label">WHY CHOOSE US</div>
+        <h2 class="section-title" style="margin-top:.5rem">Why ZEX Digital is Different</h2>
+        <p style="margin-top:1rem;color:var(--text-secondary);line-height:1.7">We are not a template mill. Every project is built from scratch, with dedicated attention, honest pricing, and real developers who care about the outcome as much as you do.</p>
+      </div>
+      <ul class="why-list anim-hidden" id="why-list">
+        <li><i data-lucide="check-circle"></i><span>Transparent fixed pricing — no hidden charges</span></li>
+        <li><i data-lucide="check-circle"></i><span>Fully custom designs — never a template</span></li>
+        <li><i data-lucide="check-circle"></i><span>Fast delivery — most projects in under 7 days</span></li>
+        <li><i data-lucide="check-circle"></i><span>Built with modern technology — fast, secure, scalable</span></li>
+        <li><i data-lucide="check-circle"></i><span>Support from real developers, not automated bots</span></li>
+        <li><i data-lucide="check-circle"></i><span>We grow with you — upgrade your plan at any time</span></li>
+        <li><i data-lucide="check-circle"></i><span>Both online and offline solutions under one roof</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="center"><div class="label">PROCESS</div><h2 class="section-title" style="margin-top:.5rem">How It Works</h2><p class="section-sub">Simple process. Powerful results.</p></div>
+      <div class="steps stagger-grid" id="how-steps">
+        <div class="card step-card anim-hidden"><div class="step-num">01</div><div class="icon-circle" style="margin:0 auto 1rem"><i data-lucide="send"></i></div><h3 class="card-title" data-how="step1-title">You Contact Us</h3><p class="card-text" data-how="step1-text">Reach out with your idea, requirements, and timeline.</p></div>
+        <div class="step-arrow"><i data-lucide="arrow-right"></i></div>
+        <div class="card step-card anim-hidden"><div class="step-num">02</div><div class="icon-circle" style="margin:0 auto 1rem"><i data-lucide="code-2"></i></div><h3 class="card-title" data-how="step2-title">We Build Your Vision</h3><p class="card-text" data-how="step2-text">Our team designs and develops your custom solution from scratch.</p></div>
+        <div class="step-arrow"><i data-lucide="arrow-right"></i></div>
+        <div class="card step-card anim-hidden"><div class="step-num">03</div><div class="icon-circle" style="margin:0 auto 1rem"><i data-lucide="rocket"></i></div><h3 class="card-title" data-how="step3-title">You Go Live and Grow</h3><p class="card-text" data-how="step3-text">Launch with confidence — and we stay on hand to support you.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SERVICES -->
+<div id="page-services" class="page">
+  <div class="container">
+    <div class="center"><div class="label">SERVICES</div><h2 class="section-title" id="main-headline-services" ondblclick="openAdminModal()" style="margin-top:.5rem">Choose Your Plan</h2><p class="section-sub">Straightforward pricing. No surprises. No hidden fees.</p></div>
+    <div class="services-2col">
+      <div>
+        <div class="service-col-head"><i data-lucide="globe"></i> Website Development</div>
+        <div class="service-col-desc">Modern, fast, fully custom websites built for your business goals.</div>
+        <div class="service-cards" id="services-websites"></div>
+      </div>
+      <div>
+        <div class="service-col-head"><i data-lucide="monitor"></i> Offline App Development</div>
+        <div class="service-col-desc">Custom desktop and mobile apps that work without internet.</div>
+        <div class="service-cards" id="services-apps"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<div id="page-team" class="page">
+  <div class="container">
+    <div class="center"><div class="label">THE TEAM</div><h2 class="section-title" id="main-headline-team" ondblclick="openAdminModal()" style="margin-top:.5rem">Meet the People Behind ZEX Digital</h2><p class="section-sub">Two developers. One mission. Unlimited possibilities.</p></div>
+    <div class="team-grid" id="team-grid"></div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<div id="page-reviews" class="page">
+  <div class="container">
+    <div class="center"><div class="label">CLIENT REVIEWS</div><h2 class="section-title" id="main-headline-reviews" ondblclick="openAdminModal()" style="margin-top:.5rem">What Our Clients Say</h2><p class="section-sub">Honest feedback from the businesses we have worked with.</p></div>
+    <div class="reviews-grid" id="reviews-grid"></div>
+    <div class="review-form">
+      <h3><i data-lucide="pencil"></i> Share Your Experience</h3>
+      <div id="review-form-body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="page-projects" class="page">
+  <div class="container">
+    <div class="center"><div class="label">OUR WORK</div><h2 class="section-title" id="main-headline-projects" ondblclick="openAdminModal()" style="margin-top:.5rem">Projects We Are Proud Of</h2><p class="section-sub">Every project is a new challenge. Every delivery is a statement.</p></div>
+    <div class="projects-wrap">
+      <button class="project-arrow left" onclick="scrollProjects(-340)"><i data-lucide="chevron-left"></i></button>
+      <div class="projects-scroll" id="projects-scroll"></div>
+      <button class="project-arrow right" onclick="scrollProjects(340)"><i data-lucide="chevron-right"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="page-contact" class="page">
+  <div class="container">
+    <div class="center"><div class="label">CONTACT</div><h2 class="section-title" id="main-headline-contact" ondblclick="openAdminModal()" style="margin-top:.5rem">Find Us</h2><p class="section-sub">We are based in Kalka, Himachal Pradesh, India.</p></div>
+    <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13728.09!2d76.9458!3d30.8414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f89b1de6f1c5d%3A0x3c3a5d28c0f2fd3!2sKalka%2C%20Himachal%20Pradesh%20134102!5e0!3m2!1sen!2sin!4v1" allowfullscreen loading="lazy"></iframe>
+    <div class="contact-loc"><i data-lucide="map-pin"></i><span id="loc-text">Kalka, Himachal Pradesh, India</span></div>
+    <div class="social-section">
+      <h2 class="section-title">Connect With Us</h2>
+      <p class="section-sub">Reach out on any platform. We respond fast.</p>
+      <div class="social-row" id="social-row"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN -->
+<div id="page-login" class="page">
+  <div class="container">
+    <div class="auth-card">
+      <div class="auth-head">
+        <span class="logo-box" style="margin:0 auto;width:40px;height:40px"><i data-lucide="zap"></i></span>
+        <h1 id="main-headline-login" ondblclick="openAdminModal()">Welcome Back</h1>
+        <p>Login to your ZEX Digital account.</p>
+      </div>
+      <form id="login-form" autocomplete="on">
+        <div class="form-field">
+          <label class="form-label"><i data-lucide="mail"></i> Email Address</label>
+          <input type="email" class="form-input" id="login-email" required />
+        </div>
+        <div class="form-field">
+          <label class="form-label"><i data-lucide="lock"></i> Password</label>
+          <div class="form-input-wrap">
+            <input type="password" class="form-input" id="login-password" required minlength="6" />
+            <button type="button" class="pwd-toggle" onclick="togglePwd('login-password',this)"><i data-lucide="eye"></i></button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Login</button>
+        <div class="form-error" id="login-error"></div>
+      </form>
+      <div id="forgot-link-wrap" style="text-align:right;margin-top:-.5rem;margin-bottom:.5rem;display:none"><a href="#" onclick="event.preventDefault();openForgotModal()" style="color:var(--accent);font-size:.85rem;text-decoration:none">Forgot password?</a></div>
+      <div class="divider-or" id="login-or-divider">or</div>
+      <button class="google-btn disabled" id="login-google" title="Coming Soon" onclick="googleSignIn()">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A10.998 10.998 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.44.34-2.1V7.06H2.18A10.998 10.998 0 0 0 1 12c0 1.78.43 3.46 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.07.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+        Continue with Google
+      </button>
+      <button class="google-btn disabled" id="login-github" title="Coming Soon" onclick="githubSignIn()" style="margin-top:.5rem;background:#24292f;color:#fff;border-color:#24292f">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.07c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 12 .3"/></svg>
+        Continue with GitHub
+      </button>
+      <div class="auth-bottom">Don't have an account?<a href="#signup">Sign Up</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNUP -->
+<div id="page-signup" class="page">
+  <div class="container">
+    <div class="auth-card">
+      <div class="auth-head">
+        <span class="logo-box" style="margin:0 auto;width:40px;height:40px"><i data-lucide="zap"></i></span>
+        <h1 id="main-headline-signup" ondblclick="openAdminModal()">Create Your Account</h1>
+        <p>Join ZEX Digital and manage your projects.</p>
+      </div>
+      <form id="signup-form" autocomplete="on">
+        <div class="form-field"><label class="form-label"><i data-lucide="user-plus"></i> Full Name</label><input type="text" class="form-input" id="signup-name" required /></div>
+        <div class="form-field"><label class="form-label"><i data-lucide="mail"></i> Email</label><input type="email" class="form-input" id="signup-email" required /></div>
+        <div class="form-field">
+          <label class="form-label"><i data-lucide="lock"></i> Password</label>
+          <div class="form-input-wrap"><input type="password" class="form-input" id="signup-password" required minlength="6" /><button type="button" class="pwd-toggle" onclick="togglePwd('signup-password',this)"><i data-lucide="eye"></i></button></div>
+        </div>
+        <div class="form-field">
+          <label class="form-label"><i data-lucide="lock"></i> Confirm Password</label>
+          <div class="form-input-wrap"><input type="password" class="form-input" id="signup-confirm" required minlength="6" /><button type="button" class="pwd-toggle" onclick="togglePwd('signup-confirm',this)"><i data-lucide="eye"></i></button></div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Create Account</button>
+        <div class="form-error" id="signup-error"></div>
+      </form>
+      <div class="divider-or" id="signup-or-divider">or</div>
+      <button class="google-btn disabled" id="signup-google" title="Coming Soon" onclick="googleSignIn()">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A10.998 10.998 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.44.34-2.1V7.06H2.18A10.998 10.998 0 0 0 1 12c0 1.78.43 3.46 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.07.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+        Continue with Google
+      </button>
+      <button class="google-btn disabled" id="signup-github" title="Coming Soon" onclick="githubSignIn()" style="margin-top:.5rem;background:#24292f;color:#fff;border-color:#24292f">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.07c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 12 .3"/></svg>
+        Continue with GitHub
+      </button>
+      <div class="auth-bottom">Already have an account?<a href="#login">Login</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<div id="page-profile" class="page">
+  <div class="container">
+    <div class="profile" id="profile-content"></div>
+  </div>
+</div>
+
+<!-- TERMS -->
+<div id="page-terms" class="page">
+  <div class="container">
+    <div class="center"><div class="label">LEGAL</div><h2 class="section-title" id="main-headline-terms" ondblclick="openAdminModal()" style="margin-top:.5rem">Terms &amp; Conditions</h2><p class="section-sub">Last updated: 2025</p></div>
+    <div class="terms-content" id="terms-content"></div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div id="page-admin" class="page">
+  <button class="admin-mobile-toggle" onclick="document.getElementById('admin-sidebar').classList.toggle('open')"><i data-lucide="menu"></i></button>
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <div class="admin-brand">ZEX Digital</div>
+    <div class="admin-brand-sub">Admin Panel</div>
+    <div class="admin-divider"></div>
+    <a class="admin-nav active" data-panel="dashboard" onclick="showAdminPanel('dashboard')"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+    <a class="admin-nav" data-panel="content" onclick="showAdminPanel('content')"><i data-lucide="type"></i>Site Content</a>
+    <a class="admin-nav" data-panel="services" onclick="showAdminPanel('services')"><i data-lucide="globe"></i>Services</a>
+    <a class="admin-nav" data-panel="bookings" onclick="showAdminPanel('bookings')"><i data-lucide="calendar"></i>Bookings</a>
+    <a class="admin-nav" data-panel="team" onclick="showAdminPanel('team')"><i data-lucide="users"></i>Team</a>
+    <a class="admin-nav" data-panel="projects" onclick="showAdminPanel('projects')"><i data-lucide="image"></i>Projects</a>
+    <a class="admin-nav" data-panel="reviews" onclick="showAdminPanel('reviews')"><i data-lucide="star"></i>Reviews</a>
+    <a class="admin-nav" data-panel="users" onclick="showAdminPanel('users')"><i data-lucide="user-circle"></i>Users</a>
+    <a class="admin-nav" data-panel="contact" onclick="showAdminPanel('contact')"><i data-lucide="map-pin"></i>Contact &amp; Social</a>
+    <a class="admin-nav" data-panel="settings" onclick="showAdminPanel('settings')"><i data-lucide="settings"></i>Settings</a>
+    <a class="admin-nav" data-panel="google" onclick="showAdminPanel('google')"><i data-lucide="log-in"></i>Login Methods</a>
+    <a class="admin-nav admin-exit" onclick="exitAdmin()"><i data-lucide="log-out"></i>Exit Admin</a>
+  </aside>
+  <main class="admin-main" id="admin-main"></main>
+</div>
+
+<!-- FLOATING CHAT BUTTON -->
+<button class="float-chat" id="float-chat" onclick="openChatLink()" aria-label="Chat with us"><i data-lucide="message-circle"></i></button>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="booking-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeBookingModal()"><i data-lucide="x"></i></button>
+    <h2>Book a Service</h2>
+    <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1rem" id="booking-service-name"></p>
+    <form id="booking-form">
+      <div class="form-field"><input type="text" class="form-input" id="b-name" placeholder="Full Name" required /></div>
+      <div class="form-field"><input type="tel" class="form-input" id="b-phone" placeholder="Phone Number" required /></div>
+      <div class="form-field"><input type="email" class="form-input" id="b-email" placeholder="Email" required /></div>
+      <div class="form-field"><textarea class="form-input" id="b-message" placeholder="Tell us about your project" required></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Request</button>
+    </form>
+    <div class="modal-success" id="booking-success">We will contact you within 24 hours.</div>
+  </div>
+</div>
+
+<!-- FORGOT PASSWORD MODAL -->
+<div class="modal-overlay" id="forgot-modal">
+  <div class="modal" style="max-width:400px;padding:2rem">
+    <button class="modal-close" onclick="closeForgotModal()"><i data-lucide="x"></i></button>
+    <h2 style="display:flex;align-items:center;gap:.5rem"><i data-lucide="key-round"></i> Reset Password</h2>
+    <p style="color:var(--text-muted);font-size:.9rem;margin:.5rem 0 1rem">Enter your email and we'll send you a reset link.</p>
+    <form id="forgot-form">
+      <div class="form-field"><input type="email" class="form-input" id="forgot-email" placeholder="you@example.com" required /></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Reset Link</button>
+      <div class="form-error" id="forgot-error"></div>
+    </form>
+    <div class="modal-success" id="forgot-success">Check your inbox for the reset link.</div>
+  </div>
+</div>
+
+<!-- ADMIN PASSWORD MODAL -->
+<div class="modal-overlay" id="admin-modal">
+  <div class="modal" style="max-width:360px;padding:2rem">
+    <h2 style="display:flex;align-items:center;gap:.5rem"><i data-lucide="shield"></i> Admin Access</h2>
+    <p style="color:var(--text-muted);font-size:.85rem;margin:.5rem 0 1rem">Enter the admin password to continue.</p>
+    <div class="form-field"><input type="password" class="form-input" id="admin-pwd" placeholder="Password" /></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="checkAdminPwd()">Enter</button>
+    <div class="form-error" id="admin-pwd-error"></div>
+    <div style="text-align:center;margin-top:.75rem"><a href="javascript:void(0)" onclick="closeAdminModal()" style="color:var(--text-muted);font-size:.85rem">Cancel</a></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="logo-box"><i data-lucide="zap"></i></span><span class="footer-brand-name">ZEX Digital</span></div>
+      <div class="footer-tag">Building Brands with Intelligence</div>
+      <div class="footer-sub">Connect · Create · Transform</div>
+    </div>
+    <div>
+      <div class="footer-heading">NAVIGATE</div>
+      <div class="footer-links">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#team">Team</a>
+        <a href="#projects">Projects</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">LEGAL</div>
+      <div class="footer-links"><a href="#terms">Terms &amp; Conditions</a><a href="#terms">Privacy Policy</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div id="footer-copy">2025 ZEX Digital. All Rights Reserved.</div>
+    <div class="footer-made">Made in India <i data-lucide="heart"></i></div>
+    <div class="footer-trademark">ZEX Digital™ is a registered brand.</div>
+  </div>
+</footer>
+
+<!-- CDN -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+/* ==========  CONFIG  ========== */
+const firebaseConfig = {
+  apiKey: "AIzaSyDuhnTVSFwBbrBj1huFKvL414UPJMq50GI",
+  authDomain: "crafto-52c96.firebaseapp.com",
+  databaseURL: "https://crafto-52c96-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "crafto-52c96",
+  storageBucket: "crafto-52c96.firebasestorage.app",
+  messagingSenderId: "849016286331",
+  appId: "1:849016286331:web:73d1c05c8d6222a11706de"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const auth = firebase.auth();
+const SUPABASE_URL = "https://emkzcqfsdhjbbcrdjqch.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVta3pjcWZzZGhqYmJjcmRqcWNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY3NDIwNDMsImV4cCI6MjA5MjMxODA0M30.dwmIqCXc4jyBR2ggcDu0N_SsHhK5tfclm_bklnu4-gY";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const ADMIN_PASSWORD = "241983";
+const STORAGE_BUCKET = "chat-images";
+
+function uploadToBucket(prefix, file){
+  const ext = (file.name.split('.').pop()||'jpg').toLowerCase();
+  const fileName = `${prefix}-${Date.now()}.${ext}`;
+  return supabaseClient.storage.from(STORAGE_BUCKET).upload(fileName, file, {upsert:true})
+    .then(({error})=>{ if(error) throw error;
+      const {data} = supabaseClient.storage.from(STORAGE_BUCKET).getPublicUrl(fileName);
+      return data.publicUrl + '?t=' + Date.now();
+    });
+}
+
+/* ==========  STATE / DEFAULTS  ========== */
+let currentUser = null;
+let cachedSettings = {};
+let cachedSocialLinks = {
+  instagram:"https://instagram.com/zexdigital",
+  whatsapp:"https://wa.me/91XXXXXXXXXX",
+  youtube:"https://youtube.com/@zexdigital",
+  twitter:"https://x.com/zexdigital",
+  linkedin:"https://linkedin.com/company/zexdigital"
+};
+let cachedServices = null;
+let cachedTeam = null;
+let cachedProjects = null;
+let cachedReviews = null;
+let selectedRating = 0;
+
+const DEFAULT_SERVICES = {
+  websites: {
+    starter:    { name:"Offline Business Website", price:"₹1,000 – ₹1,500", priceFrom:"Starting at", priceNum:"₹1,000", priceSuffix:"– ₹1,500", badge:"Best for Local Businesses", popular:false, features:["Up to 3 pages","Mobile responsive design","Contact form included","Basic SEO setup","Delivered in 3 to 5 days"] },
+    growth:     { name:"Online Business Website", price:"Starting at ₹2,000", priceFrom:"Starting at", priceNum:"₹2,000", priceSuffix:"", badge:"Most Popular", popular:true, features:["Up to 7 pages","Product and service showcase","Advanced contact and inquiry forms","Google Maps integration","SEO optimized","Delivered in 5 to 7 days"] },
+    premium:    { name:"Premium Custom Website", price:"Starting at ₹5,000", priceFrom:"Starting at", priceNum:"₹5,000", priceSuffix:"", badge:"Full Custom", popular:false, features:["Unlimited pages","Custom animations and interactions","CMS / content management integration","E-commerce ready","Priority support","Delivered in 7 to 14 days"] }
+  },
+  apps: {
+    basic:      { name:"Basic Offline App", price:"₹1,500 – ₹2,500", priceFrom:"", priceNum:"₹1,500", priceSuffix:"– ₹2,500", badge:"Perfect for Solopreneurs", popular:false, features:["Single-purpose application","Simple and clean UI","Windows and Android compatible","Data saved locally on device"] },
+    business:   { name:"Business Offline App", price:"Starting at ₹3,500", priceFrom:"Starting at", priceNum:"₹3,500", priceSuffix:"", badge:"Best for Small Teams", popular:false, features:["Multi-module application","Invoice and billing generation","Customer management system","Reports and analytics dashboard"] },
+    enterprise: { name:"Enterprise Offline App", price:"Starting at ₹7,000", priceFrom:"Starting at", priceNum:"₹7,000", priceSuffix:"", badge:"Full Power", popular:false, features:["Full custom workflow automation","Multi-user and role management","Barcode and QR scanner support","Data export to PDF and Excel","Priority dedicated support"] }
+  }
+};
+
+const DEFAULT_TEAM = {
+  paras: { name:"Paras Sharma", role:"Interactive Developer & Animation Lead", description:"Paras leads all visual and interactive development at ZEX Digital. From 2D and 3D animations to full website builds, he brings creative concepts to life with code. He works across multiple languages and tools, ensuring every project is visually exceptional and technically sound.", skills:["HTML/CSS","JavaScript","GSAP","Three.js","Animation","UI Design"], photoURL:null },
+  harshit: { name:"Harshit", role:"Lead Developer", description:"Harshit is the backbone of ZEX Digital's technical infrastructure. He builds everything from backend systems and automation pipelines to AI agents and bots. He also handles app design, ensuring every product is robust, scalable, and production-ready.", skills:["Backend","AI Agents","Automation","App Design","Bots","Databases"], photoURL:null }
+};
+
+const DEFAULT_TERMS = [
+  ["Services Overview","ZEX Digital provides website development and offline app development services to businesses and individuals across India."],
+  ["Payment & Refund Policy","Full payment is collected before the project begins. Refund eligibility depends on the stage of project completion at the time of request."],
+  ["Delivery Timeline","All timelines provided are estimates. ZEX Digital is not liable for delays caused by incomplete information or delayed response from the client."],
+  ["Intellectual Property","All designs and code created by ZEX Digital become the property of the client upon receipt of full payment."],
+  ["User Conduct","Users must not use the website or services for any illegal, harmful, or fraudulent purpose."],
+  ["Privacy Policy","We collect only the information required to deliver services (name and email). We do not sell or share user data with any third parties."],
+  ["Contact for Disputes","Reach us via WhatsApp or email at zexdigital@gmail.com for any concerns."]
+];
+
+/* ==========  HELPERS  ========== */
+function $(id){return document.getElementById(id)}
+function ic(){ if(window.lucide) lucide.createIcons(); }
+function escapeHtml(s){return (s==null?'':String(s)).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function avatarURL(name){return `https://ui-avatars.com/api/?name=${encodeURIComponent(name||'U')}&background=000000&color=ffffff&size=128&bold=true&rounded=true`}
+function fmtDate(d){try{return new Date(d).toLocaleDateString('en-IN',{year:'numeric',month:'short',day:'numeric'})}catch(e){return ''}}
+function arrify(o){if(!o) return []; if(Array.isArray(o)) return o.filter(Boolean); return Object.values(o)}
+
+/* ==========  ROUTING  ========== */
+const PAGE_TITLES = {
+  home:"ZEX Digital — Building Brands with Intelligence",
+  services:"Services — ZEX Digital",
+  team:"Team — ZEX Digital",
+  reviews:"Reviews — ZEX Digital",
+  projects:"Projects — ZEX Digital",
+  contact:"Contact — ZEX Digital",
+  login:"Login — ZEX Digital",
+  signup:"Sign Up — ZEX Digital",
+  profile:"My Profile — ZEX Digital",
+  admin:"Admin — ZEX Digital",
+  terms:"Terms & Conditions — ZEX Digital"
+};
+
+function router(){
+  const hash = (window.location.hash || '#home').replace('#','');
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.body.classList.remove('admin-open');
+  const targetId = 'page-' + hash;
+  let target = document.getElementById(targetId);
+  if(!target){ window.location.hash='#home'; return; }
+
+  // auth gates
+  if(hash==='profile' && !currentUser){ window.location.hash='#login'; return; }
+  if((hash==='login' || hash==='signup') && currentUser){ window.location.hash='#profile'; return; }
+  if(hash==='admin'){
+    if(sessionStorage.getItem('adminAccess')!=='true'){ window.location.hash='#home'; return; }
+    document.body.classList.add('admin-open');
+    renderAdminMain();
+  }
+
+  target.classList.add('active');
+  document.title = PAGE_TITLES[hash] || 'ZEX Digital';
+  document.querySelectorAll('.nav-link[data-nav]').forEach(l=>l.classList.toggle('active', l.dataset.nav===hash));
+  window.scrollTo({top:0,behavior:'instant'});
+
+  // page-specific renders
+  if(hash==='home') runHeroAnimation();
+  if(hash==='services') renderServices();
+  if(hash==='team') renderTeam();
+  if(hash==='reviews'){ renderReviews(); renderReviewForm(); }
+  if(hash==='projects') renderProjects();
+  if(hash==='profile') renderProfile();
+  if(hash==='terms') renderTerms();
+
+  // observe scroll animations
+  setTimeout(observeAnims, 50);
+  ic();
+}
+window.addEventListener('hashchange', router);
+
+/* ==========  HERO ANIMATION  ========== */
+function runHeroAnimation(){
+  const els = document.querySelectorAll('#page-home .anim-hero');
+  els.forEach((el,i)=>{
+    el.style.opacity=0; el.style.transform='translateY(28px)';
+    setTimeout(()=>{
+      el.style.transition='opacity .6s ease, transform .6s ease';
+      el.style.opacity=1; el.style.transform='translateY(0)';
+    }, i*150);
+  });
+}
+
+/* ==========  INTERSECTION OBSERVER  ========== */
+let ioInstance = null;
+function observeAnims(){
+  if(!ioInstance){
+    ioInstance = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('anim-visible'); ioInstance.unobserve(e.target); } });
+    },{threshold:.15});
+  }
+  document.querySelectorAll('.anim-hidden:not(.anim-visible)').forEach(el=>ioInstance.observe(el));
+}
+
+/* ==========  SIDEBAR  ========== */
+function toggleSidebar(open){
+  $('sidebar').classList.toggle('open', open);
+  $('sidebar-overlay').classList.toggle('open', open);
+}
+
+/* ==========  AUTH STATE  ========== */
+auth.onAuthStateChanged(user=>{
+  currentUser = user;
+  updateNavbarAuthState(user);
+  updateSidebarAuthState(user);
+  // refresh current page if state-dependent
+  const hash = (window.location.hash||'#home').replace('#','');
+  if(hash==='profile'||hash==='reviews'||hash==='login'||hash==='signup') router();
+});
+
+function updateNavbarAuthState(user){
+  const right = $('nav-right');
+  if(user){
+    const photo = user.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName||user.email||'U')}&background=000&color=fff&size=64&bold=true&rounded=true`;
+    right.innerHTML = `<img src="${photo}" class="nav-avatar" onclick="location.hash='#profile'" alt="Profile" />`;
+  } else {
+    right.innerHTML = `<a href="#login" class="nav-link" id="nav-login">Login</a>
+      <a href="#signup" class="btn btn-primary" id="nav-signup">Get Started</a>`;
+  }
+  ic();
+}
+function updateSidebarAuthState(user){
+  const wrap = $('sidebar-auth');
+  if(user){
+    wrap.innerHTML = `
+      <a class="sidebar-link" href="#profile" onclick="toggleSidebar(false)"><i data-lucide="user-circle"></i>My Profile</a>
+      <a class="sidebar-link" href="javascript:void(0)" onclick="doLogout()"><i data-lucide="log-out"></i>Logout</a>`;
+  } else {
+    wrap.innerHTML = `
+      <a class="sidebar-link" href="#login" onclick="toggleSidebar(false)"><i data-lucide="log-in"></i>Login</a>
+      <a class="sidebar-link" href="#signup" onclick="toggleSidebar(false)"><i data-lucide="user-plus"></i>Sign Up</a>`;
+  }
+  ic();
+}
+function doLogout(){ auth.signOut().then(()=>{ toggleSidebar(false); location.hash='#home'; }); }
+
+/* ==========  PASSWORD TOGGLE  ========== */
+function togglePwd(id, btn){
+  const inp = $(id);
+  const isPwd = inp.type==='password';
+  inp.type = isPwd?'text':'password';
+  btn.innerHTML = `<i data-lucide="${isPwd?'eye-off':'eye'}"></i>`;
+  ic();
+}
+
+/* ==========  LOGIN  ========== */
+$('login-form').addEventListener('submit', e=>{
+  e.preventDefault();
+  const email = $('login-email').value.trim();
+  const password = $('login-password').value;
+  const errEl = $('login-error');
+  errEl.textContent='';
+  auth.signInWithEmailAndPassword(email, password).then(()=>{
+    location.hash='#profile';
+  }).catch(err=>{
+    errEl.textContent = err.message || 'Login failed.';
+    const card = document.querySelector('#page-login .auth-card');
+    card.classList.remove('shake'); void card.offsetWidth; card.classList.add('shake');
+  });
+});
+
+/* ==========  SIGNUP  ========== */
+$('signup-form').addEventListener('submit', e=>{
+  e.preventDefault();
+  const name = $('signup-name').value.trim();
+  const email = $('signup-email').value.trim();
+  const pwd = $('signup-password').value;
+  const cf = $('signup-confirm').value;
+  const errEl = $('signup-error'); errEl.textContent='';
+  if(!name||!email||!pwd){ errEl.textContent='Please fill in all fields.'; return; }
+  if(pwd.length<6){ errEl.textContent='Password must be at least 6 characters.'; return; }
+  if(pwd!==cf){ errEl.textContent='Passwords do not match.'; return; }
+  auth.createUserWithEmailAndPassword(email,pwd).then(cred=>{
+    return cred.user.updateProfile({displayName:name}).then(()=>{
+      return db.ref('/users/'+cred.user.uid).set({
+        name:name, email:email, createdAt:new Date().toISOString(),
+        photoURL:null, role:"user"
+      });
+    });
+  }).then(()=>{ location.hash='#profile'; })
+    .catch(err=>{ errEl.textContent = err.message || 'Sign up failed.'; });
+});
+
+function googleSignIn(){
+  if(!cachedSettings.googleLoginEnabled) return;
+  oauthSignIn(new firebase.auth.GoogleAuthProvider());
+}
+function githubSignIn(){
+  if(!cachedSettings.githubLoginEnabled) return;
+  oauthSignIn(new firebase.auth.GithubAuthProvider());
+}
+function oauthSignIn(provider){
+  auth.signInWithPopup(provider)
+    .then(cred=>{
+      const u = cred.user;
+      return db.ref('/users/'+u.uid).update({
+        name:u.displayName||u.email, email:u.email, photoURL:u.photoURL||null,
+        createdAt: firebase.database.ServerValue.TIMESTAMP, role:"user"
+      });
+    })
+    .then(()=>{ location.hash='#profile'; })
+    .catch(err=>alert(err.message||'Sign-in failed.'));
+}
+function openForgotModal(){
+  if(!cachedSettings.passwordResetEnabled){ alert('Password reset is currently disabled. Please contact support.'); return; }
+  $('forgot-form').style.display='block';
+  $('forgot-success').style.display='none';
+  $('forgot-error').textContent='';
+  const em = $('login-email'); if(em && em.value) $('forgot-email').value = em.value;
+  $('forgot-modal').classList.add('open'); ic();
+}
+function closeForgotModal(){ $('forgot-modal').classList.remove('open'); $('forgot-form').reset(); }
+document.getElementById('forgot-form').addEventListener('submit', e=>{
+  e.preventDefault();
+  const email = $('forgot-email').value.trim();
+  const errEl = $('forgot-error'); errEl.textContent='';
+  auth.sendPasswordResetEmail(email).then(()=>{
+    $('forgot-form').style.display='none';
+    $('forgot-success').style.display='block';
+    setTimeout(closeForgotModal, 2500);
+  }).catch(err=>{ errEl.textContent = err.message || 'Could not send reset email.'; });
+});
+
+/* ==========  PROFILE  ========== */
+function renderProfile(){
+  if(!currentUser){ location.hash='#login'; return; }
+  const u = currentUser;
+  const photo = u.photoURL || avatarURL(u.displayName||u.email);
+  const wrap = $('profile-content');
+  wrap.innerHTML = `
+    <div class="profile-avatar-wrap">
+      <img src="${escapeHtml(photo)}" class="profile-avatar" id="profile-avatar-img" alt="Avatar"/>
+      <button class="profile-edit-btn" onclick="document.getElementById('avatar-file').click()" title="Change photo"><i data-lucide="pencil"></i></button>
+      <input type="file" id="avatar-file" accept="image/*" style="display:none" onchange="uploadAvatar(this)" />
+    </div>
+    <div class="profile-name">${escapeHtml(u.displayName||'User')}</div>
+    <div class="profile-email">${escapeHtml(u.email||'')}</div>
+    <div class="profile-section">
+      <h3>Account</h3>
+      <div class="profile-info"><span>Name</span><span>${escapeHtml(u.displayName||'-')}</span></div>
+      <div class="profile-info"><span>Email</span><span>${escapeHtml(u.email||'-')}</span></div>
+      <div class="profile-info"><span>User ID</span><span style="font-family:monospace;font-size:.8rem">${escapeHtml(u.uid)}</span></div>
+    </div>
+    <div class="profile-section">
+      <h3 style="display:flex;align-items:center;gap:.5rem"><i data-lucide="calendar"></i> My Booking Requests</h3>
+      <div id="profile-bookings" style="margin-top:.75rem;color:var(--text-muted);font-size:.9rem">Loading…</div>
+    </div>
+    <div class="profile-actions">
+      <button class="btn btn-secondary" onclick="doLogout()"><i data-lucide="log-out" style="width:16px;height:16px"></i> Logout</button>
+    </div>`;
+  ic();
+  loadProfileBookings();
+}
+function loadProfileBookings(){
+  const wrap = document.getElementById('profile-bookings'); if(!wrap || !currentUser) return;
+  db.ref('/bookings').orderByChild('userId').equalTo(currentUser.uid).once('value').then(snap=>{
+    const data = snap.val()||{};
+    const list = Object.keys(data).map(k=>Object.assign({id:k}, data[k])).sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));
+    if(!list.length){ wrap.innerHTML = `<div style="color:var(--text-muted)">You have no booking requests yet.</div>`; return; }
+    wrap.innerHTML = list.map(b=>{
+      const status = (b.status||'pending').toLowerCase();
+      return `<div class="booking-row">
+        <div class="br-top"><span class="br-svc">${escapeHtml(b.service||'Service')}</span><span class="status-pill status-${status}">${escapeHtml(status)}</span></div>
+        <div class="br-meta">${escapeHtml(fmtDate(b.date))}</div>
+        <div class="br-msg">${escapeHtml(b.message||'')}</div>
+      </div>`;
+    }).join('');
+    ic();
+  }).catch(err=>{ wrap.innerHTML = `<div style="color:#d32f2f">Could not load bookings.</div>`; });
+}
+
+function uploadAvatar(input){
+  const f = input.files && input.files[0]; if(!f) return;
+  const uid = currentUser.uid;
+  uploadToBucket('avatar-'+uid, f)
+    .then(url=>currentUser.updateProfile({photoURL:url}).then(()=>db.ref('/users/'+uid+'/photoURL').set(url)).then(()=>url))
+    .then(url=>{ document.getElementById('profile-avatar-img').src = url; updateNavbarAuthState(currentUser); })
+    .catch(err=>{ console.error(err); alert('Upload failed: '+(err.message||err)); });
+}
+
+/* ==========  CONTENT (HERO/ABOUT/WHY/HOW)  ========== */
+db.ref('/content').on('value', snap=>{
+  const d = snap.val()||{};
+  if(d.hero){
+    if(d.hero.badge) $('hero-badge-text').textContent = d.hero.badge;
+    if(d.hero.headline) $('hero-headline').textContent = d.hero.headline;
+    if(d.hero.subheadline) $('hero-subheadline').textContent = d.hero.subheadline;
+    if(d.hero.description) $('hero-description').textContent = d.hero.description;
+  }
+  if(d.about){
+    ['card1','card2','card3','card4'].forEach(k=>{
+      const c = d.about[k]; if(!c) return;
+      const t = document.querySelector(`[data-about="${k}-title"]`);
+      const x = document.querySelector(`[data-about="${k}-text"]`);
+      if(t && c.title) t.textContent = c.title;
+      if(x && c.text) x.textContent = c.text;
+    });
+  }
+  if(d.whyUs){
+    const items = [];
+    for(let i=1;i<=7;i++){ if(d.whyUs['point'+i]) items.push(d.whyUs['point'+i]); }
+    if(items.length){
+      $('why-list').innerHTML = items.map(t=>`<li><i data-lucide="check-circle"></i><span>${escapeHtml(t)}</span></li>`).join('');
+      ic();
+    }
+  }
+  if(d.howItWorks){
+    ['step1','step2','step3'].forEach(k=>{
+      const s = d.howItWorks[k]; if(!s) return;
+      const t = document.querySelector(`[data-how="${k}-title"]`);
+      const x = document.querySelector(`[data-how="${k}-text"]`);
+      if(t && s.title) t.textContent = s.title;
+      if(x && s.text) x.textContent = s.text;
+    });
+  }
+});
+
+/* ==========  SETTINGS  ========== */
+db.ref('/settings').on('value', snap=>{
+  const s = snap.val()||{};
+  cachedSettings = s;
+  document.body.classList.toggle('dark-mode', s.theme==='dark');
+  if(s.socialLinks) cachedSocialLinks = Object.assign(cachedSocialLinks, s.socialLinks);
+  if(s.locationText) $('loc-text').textContent = s.locationText;
+  if(s.footerText) $('footer-copy').textContent = s.footerText;
+  // brand icon
+  const brandBox = $('brand-logo-box');
+  if(brandBox){
+    if(s.brandIconURL){ brandBox.innerHTML = `<img src="${escapeHtml(s.brandIconURL)}" alt="Brand" style="width:100%;height:100%;object-fit:cover;border-radius:8px"/>`; }
+    else { brandBox.innerHTML = `<i data-lucide="zap"></i>`; }
+  }
+  // floating chat
+  const fc = $('float-chat');
+  if(fc){ fc.classList.toggle('show', !!(s.chatLink && s.chatLink.trim())); }
+  // google buttons
+  ['login-google','signup-google'].forEach(id=>{
+    const b = document.getElementById(id); if(!b) return;
+    if(s.googleLoginEnabled){ b.classList.remove('disabled'); b.title=''; b.style.display=''; } else { b.style.display='none'; }
+  });
+  // github buttons
+  ['login-github','signup-github'].forEach(id=>{
+    const b = document.getElementById(id); if(!b) return;
+    if(s.githubLoginEnabled){ b.classList.remove('disabled'); b.title=''; b.style.display=''; } else { b.style.display='none'; }
+  });
+  // hide "or" divider when no oauth provider is on
+  const anyOauth = !!(s.googleLoginEnabled || s.githubLoginEnabled);
+  ['login-or-divider','signup-or-divider'].forEach(id=>{ const d=document.getElementById(id); if(d) d.style.display = anyOauth?'':'none'; });
+  // forgot password link
+  const fl = document.getElementById('forgot-link-wrap');
+  if(fl) fl.style.display = s.passwordResetEnabled ? '' : 'none';
+  // dummy block to keep original loop closure simple
+  [].forEach(id=>{
+    const b = document.getElementById(id); if(!b) return;
+    if(s.googleLoginEnabled){ b.classList.remove('disabled'); b.title=''; } else { b.classList.add('disabled'); b.title='Coming Soon'; }
+  });
+  renderSocial();
+});
+
+function renderSocial(){
+  const row = $('social-row');
+  const items = [
+    ['instagram','instagram'],['whatsapp','message-circle'],['youtube','youtube'],['twitter','twitter'],['linkedin','linkedin']
+  ];
+  row.innerHTML = items.map(([k,ic])=>`<a class="social-icon" href="${escapeHtml(cachedSocialLinks[k]||'#')}" target="_blank" rel="noopener" aria-label="${k}"><i data-lucide="${ic}"></i></a>`).join('');
+  ic && ic();
+  if(window.lucide) lucide.createIcons();
+}
+
+/* ==========  SERVICES  ========== */
+db.ref('/services').on('value', snap=>{ cachedServices = snap.val(); renderServices(); });
+function renderServices(){
+  const data = cachedServices || DEFAULT_SERVICES;
+  ['websites','apps'].forEach(group=>{
+    const wrap = document.getElementById('services-'+group);
+    if(!wrap) return;
+    const def = DEFAULT_SERVICES[group];
+    const merged = data && data[group] ? data[group] : def;
+    wrap.innerHTML = Object.keys(def).map(key=>{
+      const s = (merged && merged[key]) ? Object.assign({}, def[key], merged[key]) : def[key];
+      const features = arrify(s.features);
+      const popular = !!s.popular;
+      const badgeClass = popular ? 'service-badge dark' : 'service-badge';
+      return `<div class="card service-card ${popular?'popular':''} anim-hidden">
+        ${s.badge?`<span class="${badgeClass}">${escapeHtml(s.badge)}</span>`:''}
+        <h3 class="card-title" style="font-size:1.25rem">${escapeHtml(s.name)}</h3>
+        <div class="service-price">
+          ${s.priceFrom?`<span class="service-price-from">${escapeHtml(s.priceFrom)}</span>`:''}
+          <span class="service-price-num">${escapeHtml(s.priceNum||s.price||'')}</span>
+          ${s.priceSuffix?`<span class="service-price-from">${escapeHtml(s.priceSuffix)}</span>`:''}
+        </div>
+        <ul class="service-features">${features.map(f=>`<li><i data-lucide="check-circle"></i><span>${escapeHtml(f)}</span></li>`).join('')}</ul>
+        <button class="btn btn-primary" onclick="openBookingModal('${escapeHtml(s.name).replace(/'/g,"\\'")}')">Book Now</button>
+      </div>`;
+    }).join('');
+  });
+  ic();
+  observeAnims();
+}
+
+/* ==========  BOOKING MODAL  ========== */
+function openBookingModal(serviceName){
+  // If admin set an external booking link, open that instead
+  if(cachedSettings.bookingLink && cachedSettings.bookingLink.trim()){
+    window.open(cachedSettings.bookingLink, '_blank', 'noopener');
+    return;
+  }
+  $('booking-service-name').textContent = 'For: '+serviceName;
+  $('booking-form').dataset.service = serviceName;
+  $('booking-form').style.display = 'block';
+  $('booking-success').style.display = 'none';
+  $('booking-modal').classList.add('open');
+  if(currentUser){
+    $('b-name').value = currentUser.displayName||'';
+    $('b-email').value = currentUser.email||'';
+  }
+  ic();
+}
+function closeBookingModal(){ $('booking-modal').classList.remove('open'); $('booking-form').reset(); }
+function openChatLink(){
+  const url = (cachedSettings.chatLink||'').trim();
+  if(url) window.open(url,'_blank','noopener');
+}
+$('booking-form').addEventListener('submit', e=>{
+  e.preventDefault();
+  const service = e.target.dataset.service||'';
+  const ts = Date.now();
+  const data = {
+    name:$('b-name').value.trim(), phone:$('b-phone').value.trim(),
+    email:$('b-email').value.trim(), message:$('b-message').value.trim(),
+    service, date:new Date().toISOString(), status:'pending'
+  };
+  if(currentUser){ data.userId = currentUser.uid; }
+  db.ref('/bookings/'+ts).set(data).then(()=>{
+    $('booking-form').style.display='none';
+    $('booking-success').style.display='block';
+    setTimeout(closeBookingModal, 2000);
+  }).catch(err=>alert('Submission failed: '+err.message));
+});
+
+/* ==========  TEAM  ========== */
+db.ref('/team').on('value', snap=>{ cachedTeam = snap.val(); renderTeam(); });
+function renderTeam(){
+  const data = cachedTeam || DEFAULT_TEAM;
+  const grid = $('team-grid');
+  if(!grid) return;
+  const keys = Object.keys(DEFAULT_TEAM);
+  // include any extra members from Firebase too
+  if(data) Object.keys(data).forEach(k=>{ if(!keys.includes(k)) keys.push(k); });
+  grid.innerHTML = keys.map(k=>{
+    const def = DEFAULT_TEAM[k] || {name:k,role:'',description:'',skills:[],photoURL:null};
+    const m = (data && data[k]) ? Object.assign({}, def, data[k]) : def;
+    const skills = arrify(m.skills);
+    const photo = m.photoURL || avatarURL(m.name);
+    return `<div class="team-card anim-hidden">
+      <img src="${escapeHtml(photo)}" class="team-avatar" alt="${escapeHtml(m.name)}"/>
+      <div class="team-name">${escapeHtml(m.name)}</div>
+      <div class="team-role">${escapeHtml(m.role||'')}</div>
+      <div class="team-divider"></div>
+      <p class="team-desc">${escapeHtml(m.description||'')}</p>
+      <div class="skill-tags">${skills.map(s=>`<span class="skill-tag">${escapeHtml(s)}</span>`).join('')}</div>
+    </div>`;
+  }).join('');
+  ic(); observeAnims();
+}
+
+/* ==========  REVIEWS  ========== */
+db.ref('/reviews').on('value', snap=>{ cachedReviews = snap.val(); renderReviews(); });
+function renderReviews(){
+  const grid = $('reviews-grid'); if(!grid) return;
+  const data = cachedReviews || {};
+  const list = Object.keys(data).map(k=>Object.assign({id:k}, data[k])).filter(r=>r&&r.text);
+  list.sort((a,b)=> new Date(b.date||0) - new Date(a.date||0));
+  if(!list.length){
+    grid.innerHTML = `<div class="card" style="grid-column:1/-1;text-align:center;color:var(--text-muted)">No reviews yet — be the first to leave one.</div>`;
+    return;
+  }
+  grid.innerHTML = list.map((r,i)=>{
+    const photo = r.userPhoto || avatarURL(r.userName||'U');
+    const stars = [1,2,3,4,5].map(n=>`<i data-lucide="star" class="${n<=Number(r.rating||0)?'star-filled':'star-empty'}"></i>`).join('');
+    const text = r.text||'';
+    const long = text.length>180;
+    const shown = long ? text.slice(0,180)+'…' : text;
+    return `<div class="review-card anim-hidden" style="transition-delay:${i*80}ms">
+      <div class="review-top">
+        <img src="${escapeHtml(photo)}" class="review-avatar" alt=""/>
+        <div><div class="review-name">${escapeHtml(r.userName||'User')}</div><div class="review-date">${escapeHtml(fmtDate(r.date))}</div></div>
+      </div>
+      <div class="review-stars">${stars}</div>
+      <div class="review-text" data-rev="${r.id}">
+        <span class="rev-shown">${escapeHtml(shown)}</span>
+        ${long?`<a class="read-more" onclick="toggleReview('${r.id}', this)">Read more</a><span class="rev-full" style="display:none">${escapeHtml(text)}</span>`:''}
+      </div>
+      <div class="review-bottom"><i data-lucide="message-square" style="width:12px;height:12px"></i></div>
+    </div>`;
+  }).join('');
+  ic(); observeAnims();
+}
+function toggleReview(id, link){
+  const card = link.closest('.review-text');
+  const shown = card.querySelector('.rev-shown');
+  const full = card.querySelector('.rev-full');
+  if(full.style.display==='none'){ shown.style.display='none'; full.style.display='inline'; link.textContent='Show less'; }
+  else { shown.style.display='inline'; full.style.display='none'; link.textContent='Read more'; }
+}
+
+function renderReviewForm(){
+  const wrap = $('review-form-body');
+  if(!currentUser){
+    wrap.innerHTML = `<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-muted);margin-bottom:1rem"><i data-lucide="lock"></i> Please log in to leave a review.</div>
+      <a href="#login" class="btn btn-primary">Login</a>`;
+    ic(); return;
+  }
+  selectedRating = 0;
+  wrap.innerHTML = `
+    <div class="star-selector" id="star-sel">
+      ${[1,2,3,4,5].map(n=>`<i data-lucide="star" data-n="${n}"></i>`).join('')}
+    </div>
+    <textarea class="form-input" id="review-text" maxlength="500" placeholder="Write your review here..." style="min-height:120px;resize:vertical"></textarea>
+    <div style="text-align:right;font-size:.8rem;color:var(--text-muted);margin:.25rem 0 1rem"><span id="rev-count">0</span> / 500</div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitReview()">Post Review</button>
+    <div class="form-error" id="review-error"></div>
+    <div id="review-success" style="color:#16a34a;text-align:center;margin-top:.5rem;display:none">Thank you! Your review has been posted.</div>`;
+  ic();
+  const stars = wrap.querySelectorAll('#star-sel i');
+  stars.forEach(s=>{
+    s.addEventListener('mouseenter',()=>{
+      const n = +s.dataset.n;
+      stars.forEach(x=>x.classList.toggle('hovered', +x.dataset.n<=n));
+    });
+    s.addEventListener('mouseleave',()=>stars.forEach(x=>x.classList.remove('hovered')));
+    s.addEventListener('click',()=>{
+      selectedRating = +s.dataset.n;
+      stars.forEach(x=>x.classList.toggle('selected', +x.dataset.n<=selectedRating));
+    });
+  });
+  $('review-text').addEventListener('input', e=>{ $('rev-count').textContent = e.target.value.length; });
+}
+function submitReview(){
+  const errEl = $('review-error'); errEl.textContent='';
+  const text = $('review-text').value.trim();
+  if(!selectedRating){ errEl.textContent='Please select a star rating.'; return; }
+  if(!text){ errEl.textContent='Please write your review.'; return; }
+  const u = currentUser; if(!u){ errEl.textContent='You must be logged in.'; return; }
+  const key = u.uid + '_' + Date.now();
+  db.ref('/reviews/'+key).set({
+    userName: u.displayName || u.email || 'User',
+    userPhoto: u.photoURL || null,
+    rating: selectedRating, text, date: new Date().toISOString(), userId: u.uid
+  }).then(()=>{
+    $('review-success').style.display='block';
+    $('review-text').value=''; $('rev-count').textContent='0';
+    selectedRating=0;
+    document.querySelectorAll('#star-sel i').forEach(x=>x.classList.remove('selected'));
+    setTimeout(()=>{ $('review-success').style.display='none'; }, 3000);
+  }).catch(err=>{ errEl.textContent=err.message; });
+}
+
+/* ==========  PROJECTS  ========== */
+db.ref('/projects').on('value', snap=>{ cachedProjects = snap.val(); renderProjects(); });
+function renderProjects(){
+  const wrap = $('projects-scroll'); if(!wrap) return;
+  const data = cachedProjects || {};
+  let list = Object.keys(data).map(k=>Object.assign({id:k}, data[k]));
+  list.sort((a,b)=>(a.order||0)-(b.order||0));
+  if(!list.length){
+    list = Array.from({length:6}, (_,i)=>({name:'Project '+String(i+1).padStart(2,'0'), tech:'Coming soon', imageURL:null, _placeholder:true}));
+  }
+  wrap.innerHTML = list.map((p,i)=>`
+    <div class="project-card">
+      ${p.imageURL?`<img src="${escapeHtml(p.imageURL)}" alt="${escapeHtml(p.name||'')}"/>`:`<span style="font-weight:700;font-size:1.1rem">${escapeHtml(p.name||'Project '+(i+1))}</span>`}
+      <div class="project-overlay">
+        <div class="project-name">${escapeHtml(p.name||'Project '+(i+1))}</div>
+        ${p.tech?`<div class="project-tech">${escapeHtml(p.tech)}</div>`:''}
+      </div>
+    </div>`).join('');
+  ic();
+}
+function scrollProjects(dx){ const el = $('projects-scroll'); el.scrollBy({left:dx, behavior:'smooth'}); }
+
+/* ==========  TERMS  ========== */
+function renderTerms(){
+  const wrap = $('terms-content');
+  const txt = (cachedSettings && cachedSettings.termsText) || '';
+  if(txt && txt.trim()){
+    wrap.innerHTML = `<div style="white-space:pre-wrap">${escapeHtml(txt)}</div>`;
+  } else {
+    wrap.innerHTML = DEFAULT_TERMS.map((t,i)=>`<h3>${i+1}. ${escapeHtml(t[0])}</h3><p>${escapeHtml(t[1])}</p>`).join('');
+  }
+}
+
+/* ==========  ADMIN ACCESS  ========== */
+function openAdminModal(){ $('admin-modal').classList.add('open'); $('admin-pwd').value=''; $('admin-pwd-error').textContent=''; setTimeout(()=>$('admin-pwd').focus(),100); ic(); }
+function closeAdminModal(){ $('admin-modal').classList.remove('open'); }
+function checkAdminPwd(){
+  const v = $('admin-pwd').value;
+  if(v===ADMIN_PASSWORD){ sessionStorage.setItem('adminAccess','true'); closeAdminModal(); location.hash='#admin'; }
+  else {
+    $('admin-pwd-error').textContent='Incorrect password. Access denied.';
+    const inp = $('admin-pwd'); inp.classList.remove('shake'); void inp.offsetWidth; inp.classList.add('shake');
+    inp.value='';
+  }
+}
+$('admin-pwd').addEventListener('keydown', e=>{ if(e.key==='Enter') checkAdminPwd(); });
+
+function exitAdmin(){ sessionStorage.removeItem('adminAccess'); document.body.classList.remove('admin-open'); location.hash='#home'; }
+
+/* ==========  ADMIN PANELS  ========== */
+function renderAdminMain(){
+  $('admin-main').innerHTML = `
+    <div class="admin-panel active" id="admin-dashboard"></div>
+    <div class="admin-panel" id="admin-content"></div>
+    <div class="admin-panel" id="admin-services"></div>
+    <div class="admin-panel" id="admin-bookings"></div>
+    <div class="admin-panel" id="admin-team"></div>
+    <div class="admin-panel" id="admin-projects"></div>
+    <div class="admin-panel" id="admin-reviews"></div>
+    <div class="admin-panel" id="admin-users"></div>
+    <div class="admin-panel" id="admin-contact"></div>
+    <div class="admin-panel" id="admin-settings"></div>
+    <div class="admin-panel" id="admin-google"></div>`;
+  showAdminPanel('dashboard');
+}
+function showAdminPanel(name){
+  document.querySelectorAll('.admin-nav').forEach(n=>n.classList.toggle('active', n.dataset.panel===name));
+  document.querySelectorAll('.admin-panel').forEach(p=>p.classList.remove('active'));
+  const el = $('admin-'+name); if(!el) return;
+  el.classList.add('active');
+  if(name==='dashboard') renderAdminDashboard();
+  if(name==='content') renderAdminContent();
+  if(name==='services') renderAdminServices();
+  if(name==='bookings') renderAdminBookings();
+  if(name==='team') renderAdminTeam();
+  if(name==='projects') renderAdminProjects();
+  if(name==='reviews') renderAdminReviews();
+  if(name==='users') renderAdminUsers();
+  if(name==='contact') renderAdminContact();
+  if(name==='settings') renderAdminSettings();
+  if(name==='google') renderAdminGoogle();
+  if(window.innerWidth<768) document.getElementById('admin-sidebar').classList.remove('open');
+}
+
+function renderAdminDashboard(){
+  const el = $('admin-dashboard');
+  el.innerHTML = `<h2>Dashboard</h2>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num" id="stat-users">0</div><div class="stat-label">Total Users</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-reviews">0</div><div class="stat-label">Total Reviews</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-projects">0</div><div class="stat-label">Total Projects</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-bookings">0</div><div class="stat-label">Bookings</div></div>
+    </div>`;
+  ['users','reviews','projects','bookings'].forEach(k=>{
+    db.ref('/'+k).once('value').then(s=>{ const e=document.getElementById('stat-'+k); if(e) e.textContent = s.numChildren(); }).catch(()=>{});
+  });
+}
+
+function adminSaveBtn(label, onclick){
+  return `<button class="admin-save-btn" onclick="${onclick}"><i data-lucide="check-circle" style="width:14px;height:14px"></i>${label}</button>`;
+}
+
+function renderAdminContent(){
+  const el = $('admin-content');
+  el.innerHTML = `<h2>Site Content Editor</h2>
+    <div class="admin-section">
+      <h3>Hero</h3>
+      ${['badge','headline','subheadline','description'].map(k=>`
+        <div class="admin-field"><label>${k}</label><input id="ac-hero-${k}" value="${escapeHtml($('hero-'+(k==='badge'?'badge-text':k)).textContent)}"/></div>
+      `).join('')}
+      ${adminSaveBtn('Save Hero','saveAdminHero(this)')}
+    </div>
+    <div class="admin-section">
+      <h3>About Cards</h3>
+      ${[1,2,3,4].map(i=>`
+        <div class="admin-field"><label>Card ${i} Title</label><input id="ac-about-${i}-title" value="${escapeHtml(document.querySelector(`[data-about="card${i}-title"]`).textContent)}"/></div>
+        <div class="admin-field"><label>Card ${i} Text</label><textarea id="ac-about-${i}-text">${escapeHtml(document.querySelector(`[data-about="card${i}-text"]`).textContent)}</textarea></div>
+      `).join('')}
+      ${adminSaveBtn('Save About','saveAdminAbout(this)')}
+    </div>
+    <div class="admin-section">
+      <h3>Why ZEX (Points 1-7)</h3>
+      ${[1,2,3,4,5,6,7].map(i=>`<div class="admin-field"><label>Point ${i}</label><input id="ac-why-${i}" value="${escapeHtml((document.querySelectorAll('#why-list li span')[i-1]||{textContent:''}).textContent)}"/></div>`).join('')}
+      ${adminSaveBtn('Save Why Us','saveAdminWhy(this)')}
+    </div>
+    <div class="admin-section">
+      <h3>How It Works</h3>
+      ${[1,2,3].map(i=>`
+        <div class="admin-field"><label>Step ${i} Title</label><input id="ac-how-${i}-title" value="${escapeHtml(document.querySelector(`[data-how="step${i}-title"]`).textContent)}"/></div>
+        <div class="admin-field"><label>Step ${i} Text</label><textarea id="ac-how-${i}-text">${escapeHtml(document.querySelector(`[data-how="step${i}-text"]`).textContent)}</textarea></div>
+      `).join('')}
+      ${adminSaveBtn('Save Steps','saveAdminHow(this)')}
+    </div>`;
+  ic();
+}
+function flashSaved(btn){ const s=document.createElement('span'); s.className='admin-saved'; s.textContent='Saved!'; btn.parentNode.appendChild(s); setTimeout(()=>s.remove(),2000); }
+function saveAdminHero(btn){
+  const data={badge:$('ac-hero-badge').value,headline:$('ac-hero-headline').value,subheadline:$('ac-hero-subheadline').value,description:$('ac-hero-description').value};
+  db.ref('/content/hero').update(data).then(()=>flashSaved(btn));
+}
+function saveAdminAbout(btn){
+  const data={};
+  for(let i=1;i<=4;i++) data['card'+i]={title:$('ac-about-'+i+'-title').value,text:$('ac-about-'+i+'-text').value};
+  db.ref('/content/about').update(data).then(()=>flashSaved(btn));
+}
+function saveAdminWhy(btn){
+  const data={};
+  for(let i=1;i<=7;i++) data['point'+i]=$('ac-why-'+i).value;
+  db.ref('/content/whyUs').set(data).then(()=>flashSaved(btn));
+}
+function saveAdminHow(btn){
+  const data={};
+  for(let i=1;i<=3;i++) data['step'+i]={title:$('ac-how-'+i+'-title').value,text:$('ac-how-'+i+'-text').value};
+  db.ref('/content/howItWorks').update(data).then(()=>flashSaved(btn));
+}
+
+function renderAdminServices(){
+  const el = $('admin-services');
+  const data = cachedServices || DEFAULT_SERVICES;
+  el.innerHTML = `<h2>Services Manager</h2>` + ['websites','apps'].map(group=>{
+    const def = DEFAULT_SERVICES[group];
+    const merged = (data && data[group]) ? Object.assign({}, def, data[group]) : def;
+    return `<div class="admin-section"><h3 style="text-transform:uppercase">${group}</h3>` + Object.keys(merged).map(key=>{
+      const s = Object.assign({}, def[key]||{}, merged[key]||{});
+      const features = arrify(s.features);
+      return `<div class="admin-section" style="background:#fafafa">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+          <strong>${escapeHtml(s.name||key)}</strong>
+          <button class="admin-icon-btn" onclick="deleteService('${group}','${key}')" title="Delete service"><i data-lucide="trash-2"></i></button>
+        </div>
+        <div class="admin-field"><label>Name</label><input id="as-${group}-${key}-name" value="${escapeHtml(s.name||'')}"/></div>
+        <div class="admin-field"><label>Badge</label><input id="as-${group}-${key}-badge" value="${escapeHtml(s.badge||'')}"/></div>
+        <div class="admin-field"><label>Price (display)</label><input id="as-${group}-${key}-price" value="${escapeHtml(s.priceNum||s.price||'')}"/></div>
+        <div class="admin-field"><label><input type="checkbox" id="as-${group}-${key}-popular" ${s.popular?'checked':''}/> Mark as popular</label></div>
+        <div class="admin-field"><label>Features</label>
+          <div id="as-${group}-${key}-feats">${features.map(f=>`<div class="admin-feature-row"><input value="${escapeHtml(f)}"/><button class="admin-icon-btn" onclick="this.parentNode.remove()"><i data-lucide="trash-2"></i></button></div>`).join('')}</div>
+          <button class="admin-icon-btn" onclick="addFeatureRow('as-${group}-${key}-feats')"><i data-lucide="plus-circle"></i></button>
+        </div>
+        ${adminSaveBtn('Save','saveService(\''+group+'\',\''+key+'\',this)')}
+      </div>`;
+    }).join('') +
+    `<div class="admin-section" style="background:#f0f7ff">
+      <h4 style="margin-bottom:.5rem">Add New ${group==='websites'?'Website Plan':'App Plan'}</h4>
+      <div class="admin-field"><label>Name</label><input id="ans-${group}-name"/></div>
+      <div class="admin-field"><label>Badge</label><input id="ans-${group}-badge"/></div>
+      <div class="admin-field"><label>Price</label><input id="ans-${group}-price"/></div>
+      ${adminSaveBtn('Add Service','addNewService(\''+group+'\',this)')}
+    </div></div>`;
+  }).join('');
+  ic();
+}
+function deleteService(group,key){
+  if(!confirm('Delete this service?')) return;
+  db.ref('/services/'+group+'/'+key).remove().then(renderAdminServices);
+}
+function addNewService(group,btn){
+  const name = $('ans-'+group+'-name').value.trim();
+  if(!name){ alert('Enter a name'); return; }
+  const key = 'svc_'+Date.now();
+  db.ref('/services/'+group+'/'+key).set({
+    name, badge:$('ans-'+group+'-badge').value.trim(), priceNum:$('ans-'+group+'-price').value.trim(),
+    popular:false, features:[]
+  }).then(()=>{ flashSaved(btn); renderAdminServices(); });
+}
+function addFeatureRow(containerId){
+  const c = document.getElementById(containerId);
+  const r = document.createElement('div'); r.className='admin-feature-row';
+  r.innerHTML = `<input value=""/><button class="admin-icon-btn" onclick="this.parentNode.remove()"><i data-lucide="trash-2"></i></button>`;
+  c.appendChild(r); ic();
+}
+function saveService(group,key,btn){
+  const feats = Array.from(document.querySelectorAll('#as-'+group+'-'+key+'-feats input')).map(i=>i.value).filter(Boolean);
+  const data = {
+    name:$('as-'+group+'-'+key+'-name').value,
+    badge:$('as-'+group+'-'+key+'-badge').value,
+    priceNum:$('as-'+group+'-'+key+'-price').value,
+    popular: $('as-'+group+'-'+key+'-popular').checked,
+    features: feats
+  };
+  db.ref('/services/'+group+'/'+key).update(data).then(()=>flashSaved(btn));
+}
+
+function renderAdminBookings(){
+  const el = $('admin-bookings');
+  el.innerHTML = `<h2>Bookings</h2><div id="bk-list" style="margin-top:1rem">Loading…</div>`;
+  db.ref('/bookings').once('value').then(snap=>{
+    const data = snap.val()||{};
+    const list = Object.keys(data).map(k=>Object.assign({id:k},data[k])).sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));
+    if(!list.length){ document.getElementById('bk-list').innerHTML = '<div style="color:#888">No bookings yet.</div>'; return; }
+    document.getElementById('bk-list').innerHTML = list.map(b=>{
+      const status = (b.status||'pending').toLowerCase();
+      return `<div class="booking-row">
+        <div class="br-top">
+          <div><span class="br-svc">${escapeHtml(b.service||'Service')}</span> <span class="status-pill status-${status}">${escapeHtml(status)}</span></div>
+          <button class="admin-icon-btn" onclick="deleteBooking('${b.id}')" title="Delete"><i data-lucide="trash-2"></i></button>
+        </div>
+        <div class="br-meta"><strong>${escapeHtml(b.name||'')}</strong> · ${escapeHtml(b.email||'')} · ${escapeHtml(b.phone||'')}</div>
+        <div class="br-meta">${escapeHtml(fmtDate(b.date))}</div>
+        <div class="br-msg">${escapeHtml(b.message||'')}</div>
+        <div style="margin-top:.75rem;display:flex;gap:.5rem;flex-wrap:wrap">
+          <button class="admin-save-btn" style="background:#16a34a" onclick="setBookingStatus('${b.id}','confirmed')"><i data-lucide="check" style="width:14px;height:14px"></i>Confirm</button>
+          <button class="admin-save-btn" style="background:#dc2626" onclick="setBookingStatus('${b.id}','rejected')"><i data-lucide="x" style="width:14px;height:14px"></i>Reject</button>
+          <button class="admin-save-btn" style="background:#6b7280" onclick="setBookingStatus('${b.id}','pending')">Pending</button>
+        </div>
+      </div>`;
+    }).join('');
+    ic();
+  });
+}
+function setBookingStatus(id,status){ db.ref('/bookings/'+id+'/status').set(status).then(renderAdminBookings); }
+function deleteBooking(id){ if(!confirm('Delete this booking?')) return; db.ref('/bookings/'+id).remove().then(renderAdminBookings); }
+
+function renderAdminTeam(){
+  const el = $('admin-team');
+  const data = cachedTeam || DEFAULT_TEAM;
+  el.innerHTML = `<h2>Team Manager</h2>` + Object.keys(data).map(k=>{
+    const m = Object.assign({}, DEFAULT_TEAM[k]||{}, data[k]||{});
+    const skills = arrify(m.skills).join(', ');
+    return `<div class="admin-section">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem"><strong>${escapeHtml(m.name||k)}</strong>
+        <button class="admin-icon-btn" onclick="deleteTeam('${k}')" title="Delete"><i data-lucide="trash-2"></i></button></div>
+      <div class="admin-field"><label>Name</label><input id="at-${k}-name" value="${escapeHtml(m.name||'')}"/></div>
+      <div class="admin-field"><label>Role</label><input id="at-${k}-role" value="${escapeHtml(m.role||'')}"/></div>
+      <div class="admin-field"><label>Description</label><textarea id="at-${k}-desc">${escapeHtml(m.description||'')}</textarea></div>
+      <div class="admin-field"><label>Skills (comma-separated)</label><input id="at-${k}-skills" value="${escapeHtml(skills)}"/></div>
+      <div class="admin-field"><label>Photo</label>
+        <div class="admin-row"><img src="${escapeHtml(m.photoURL||avatarURL(m.name))}" style="width:48px;height:48px;border-radius:50%"/>
+        <input type="file" accept="image/*" onchange="uploadTeamPhoto('${k}',this)"/></div>
+      </div>
+      ${adminSaveBtn('Save','saveTeam(\''+k+'\',this)')}
+    </div>`;
+  }).join('') + `<div class="admin-section" style="background:#f0f7ff">
+    <h4 style="margin-bottom:.5rem">Add Team Member</h4>
+    <div class="admin-field"><label>Name</label><input id="ant-name"/></div>
+    <div class="admin-field"><label>Role</label><input id="ant-role"/></div>
+    <div class="admin-field"><label>Description</label><textarea id="ant-desc"></textarea></div>
+    <div class="admin-field"><label>Skills (comma-separated)</label><input id="ant-skills"/></div>
+    ${adminSaveBtn('Add Member','addTeamMember(this)')}
+  </div>`;
+  ic();
+}
+function saveTeam(key,btn){
+  const data = {
+    name:$('at-'+key+'-name').value, role:$('at-'+key+'-role').value,
+    description:$('at-'+key+'-desc').value,
+    skills: $('at-'+key+'-skills').value.split(',').map(s=>s.trim()).filter(Boolean)
+  };
+  db.ref('/team/'+key).update(data).then(()=>flashSaved(btn));
+}
+function deleteTeam(key){ if(!confirm('Remove this member?')) return; db.ref('/team/'+key).remove().then(renderAdminTeam); }
+function addTeamMember(btn){
+  const name = $('ant-name').value.trim(); if(!name){ alert('Enter a name'); return; }
+  const key = 'm_'+Date.now();
+  db.ref('/team/'+key).set({
+    name, role:$('ant-role').value, description:$('ant-desc').value,
+    skills: $('ant-skills').value.split(',').map(s=>s.trim()).filter(Boolean), photoURL:null
+  }).then(()=>{ flashSaved(btn); renderAdminTeam(); });
+}
+function uploadTeamPhoto(key, input){
+  const f = input.files && input.files[0]; if(!f) return;
+  uploadToBucket('team-'+key, f).then(url=>db.ref('/team/'+key+'/photoURL').set(url))
+    .then(()=>renderAdminTeam()).catch(e=>alert('Error: '+e.message));
+}
+
+function renderAdminProjects(){
+  const el = $('admin-projects');
+  const data = cachedProjects || {};
+  const list = Object.keys(data).map(k=>Object.assign({id:k},data[k])).sort((a,b)=>(a.order||0)-(b.order||0));
+  el.innerHTML = `<h2>Projects Manager</h2>
+    <div class="admin-section">
+      <h3>Add New Project</h3>
+      <div class="admin-field"><label>Project Name</label><input id="ap-name"/></div>
+      <div class="admin-field"><label>Tech Used</label><input id="ap-tech"/></div>
+      <div class="admin-field"><label>Image</label><input type="file" id="ap-img" accept="image/*"/></div>
+      ${adminSaveBtn('Add Project','addProject(this)')}
+    </div>
+    ${list.map((p,i)=>`<div class="admin-section">
+      <div class="admin-row">
+        ${p.imageURL?`<img src="${escapeHtml(p.imageURL)}" style="width:64px;height:64px;border-radius:8px;object-fit:cover"/>`:`<div style="width:64px;height:64px;border-radius:8px;background:#1a1a1a"></div>`}
+        <div style="flex:1"><div style="font-weight:600">${escapeHtml(p.name||'')}</div><div style="font-size:.85rem;color:#888">${escapeHtml(p.tech||'')}</div></div>
+        <button class="admin-icon-btn" onclick="moveProject('${p.id}',-1)" title="Up"><i data-lucide="chevron-left" style="transform:rotate(90deg)"></i></button>
+        <button class="admin-icon-btn" onclick="moveProject('${p.id}',1)" title="Down"><i data-lucide="chevron-right" style="transform:rotate(90deg)"></i></button>
+        <button class="admin-icon-btn" onclick="deleteProject('${p.id}')"><i data-lucide="trash-2"></i></button>
+      </div>
+    </div>`).join('')}`;
+  ic();
+}
+function addProject(btn){
+  const name = $('ap-name').value.trim(), tech = $('ap-tech').value.trim();
+  const file = $('ap-img').files[0];
+  if(!name){ alert('Enter a name'); return; }
+  const id = 'p_'+Date.now();
+  const order = Object.keys(cachedProjects||{}).length;
+  const finish = (imageURL)=> db.ref('/projects/'+id).set({name,tech,imageURL:imageURL||null,order}).then(()=>{ flashSaved(btn); $('ap-name').value=''; $('ap-tech').value=''; $('ap-img').value=''; renderAdminProjects(); });
+  if(file){
+    uploadToBucket('project-'+id, file).then(url=>finish(url)).catch(e=>alert('Upload failed: '+e.message));
+  } else finish(null);
+}
+function deleteProject(id){ if(!confirm('Delete this project?')) return; db.ref('/projects/'+id).remove().then(renderAdminProjects); }
+function moveProject(id, dir){
+  const data = cachedProjects||{};
+  const list = Object.keys(data).map(k=>Object.assign({id:k},data[k])).sort((a,b)=>(a.order||0)-(b.order||0));
+  const idx = list.findIndex(x=>x.id===id); if(idx<0) return;
+  const swap = idx+dir; if(swap<0||swap>=list.length) return;
+  const updates = {};
+  updates['/projects/'+list[idx].id+'/order'] = swap;
+  updates['/projects/'+list[swap].id+'/order'] = idx;
+  db.ref().update(updates).then(renderAdminProjects);
+}
+
+function renderAdminReviews(){
+  const el = $('admin-reviews');
+  const data = cachedReviews || {};
+  const list = Object.keys(data).map(k=>Object.assign({id:k},data[k])).sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));
+  el.innerHTML = `<h2>Reviews Manager</h2>
+    <table class="admin-table"><thead><tr><th>User</th><th>Rating</th><th>Date</th><th>Review</th><th></th></tr></thead><tbody>
+    ${list.map(r=>`<tr>
+      <td>${escapeHtml(r.userName||'')}</td>
+      <td>${'★'.repeat(Number(r.rating||0))}${'☆'.repeat(5-Number(r.rating||0))}</td>
+      <td>${escapeHtml(fmtDate(r.date))}</td>
+      <td>${escapeHtml((r.text||'').slice(0,80))}${(r.text||'').length>80?'…':''}</td>
+      <td><button class="admin-icon-btn" onclick="deleteReview('${r.id}')"><i data-lucide="trash-2"></i></button></td>
+    </tr>`).join('')||'<tr><td colspan="5" style="text-align:center;color:#888">No reviews yet</td></tr>'}
+    </tbody></table>`;
+  ic();
+}
+function deleteReview(id){ if(!confirm('Delete this review?')) return; db.ref('/reviews/'+id).remove().then(renderAdminReviews); }
+
+function renderAdminUsers(){
+  const el = $('admin-users');
+  el.innerHTML = `<h2>Users</h2><div style="color:#888;font-size:.85rem;margin-bottom:1rem">To delete users permanently, use Firebase Console.</div><div id="users-table-wrap">Loading…</div>`;
+  db.ref('/users').once('value').then(snap=>{
+    const data = snap.val()||{};
+    const list = Object.keys(data).map(k=>Object.assign({uid:k},data[k]));
+    document.getElementById('users-table-wrap').innerHTML = `<table class="admin-table"><thead><tr><th>Name</th><th>Email</th><th>Joined</th><th>Role</th></tr></thead><tbody>
+      ${list.map(u=>`<tr><td>${escapeHtml(u.name||'')}</td><td>${escapeHtml(u.email||'')}</td><td>${escapeHtml(fmtDate(u.createdAt))}</td><td>${escapeHtml(u.role||'user')}</td></tr>`).join('')||'<tr><td colspan="4" style="text-align:center;color:#888">No users yet</td></tr>'}
+    </tbody></table>`;
+  });
+}
+
+function renderAdminContact(){
+  const el = $('admin-contact');
+  const s = cachedSocialLinks;
+  el.innerHTML = `<h2>Contact &amp; Social</h2>
+    <div class="admin-field"><label>Location Text</label><input id="ac-loc" value="${escapeHtml(cachedSettings.locationText||'Kalka, Himachal Pradesh, India')}"/></div>
+    ${['instagram','whatsapp','youtube','twitter','linkedin'].map(k=>`<div class="admin-field"><label>${k} URL</label><input id="ac-soc-${k}" value="${escapeHtml(s[k]||'')}"/></div>`).join('')}
+    ${adminSaveBtn('Save All','saveContact(this)')}`;
+  ic();
+}
+function saveContact(btn){
+  const updates = { locationText: $('ac-loc').value, socialLinks:{} };
+  ['instagram','whatsapp','youtube','twitter','linkedin'].forEach(k=>{ updates.socialLinks[k] = $('ac-soc-'+k).value; });
+  db.ref('/settings').update(updates).then(()=>flashSaved(btn));
+}
+
+function renderAdminSettings(){
+  const el = $('admin-settings');
+  const s = cachedSettings;
+  el.innerHTML = `<h2>Settings</h2>
+    <div class="admin-section">
+      <h4 style="margin-bottom:.5rem">Brand Icon (Navbar Logo)</h4>
+      <div class="admin-row" style="margin-bottom:.5rem">
+        ${s.brandIconURL ? `<img src="${escapeHtml(s.brandIconURL)}" style="width:48px;height:48px;border-radius:8px;object-fit:cover"/>` : `<div style="width:48px;height:48px;border-radius:8px;background:#eee;display:grid;place-items:center"><i data-lucide="zap"></i></div>`}
+        <input type="file" accept="image/*" onchange="uploadBrandIcon(this)"/>
+        ${s.brandIconURL ? `<button class="admin-icon-btn" onclick="clearBrandIcon()" title="Remove"><i data-lucide="trash-2"></i></button>` : ''}
+      </div>
+      <div style="color:#888;font-size:.85rem">Replaces the lightning icon next to the brand name.</div>
+    </div>
+    <div class="admin-field"><label>Book Now Link (external URL)</label><input id="as-booklink" value="${escapeHtml(s.bookingLink||'')}" placeholder="Leave empty to use the built-in form"/></div>
+    <div class="admin-field"><label>Floating Chat Link (WhatsApp/Telegram/etc.)</label><input id="as-chatlink" value="${escapeHtml(s.chatLink||'')}" placeholder="https://wa.me/91XXXXXXXXXX"/></div>
+    <div class="admin-field"><label>Footer Text</label><input id="as-footer" value="${escapeHtml(s.footerText||'2025 ZEX Digital. All Rights Reserved.')}"/></div>
+    <div class="admin-field"><label>Theme</label>
+      <div><label style="display:inline-flex;align-items:center;gap:.4rem;margin-right:1rem"><input type="radio" name="theme" value="light" ${s.theme!=='dark'?'checked':''}/>Light</label>
+      <label style="display:inline-flex;align-items:center;gap:.4rem"><input type="radio" name="theme" value="dark" ${s.theme==='dark'?'checked':''}/>Dark</label></div>
+    </div>
+    <div class="admin-field"><label>Terms &amp; Conditions</label><textarea id="as-terms" style="min-height:200px">${escapeHtml(s.termsText||'')}</textarea></div>
+    ${adminSaveBtn('Save Settings','saveSettings(this)')}`;
+  ic();
+}
+function saveSettings(btn){
+  const theme = (document.querySelector('input[name=theme]:checked')||{value:'light'}).value;
+  const updates = {
+    footerText: $('as-footer').value, theme, termsText: $('as-terms').value,
+    bookingLink: $('as-booklink').value.trim(), chatLink: $('as-chatlink').value.trim()
+  };
+  db.ref('/settings').update(updates).then(()=>flashSaved(btn));
+}
+function uploadBrandIcon(input){
+  const f = input.files && input.files[0]; if(!f) return;
+  uploadToBucket('brand', f).then(url=>db.ref('/settings/brandIconURL').set(url))
+    .then(()=>renderAdminSettings()).catch(e=>alert('Upload failed: '+e.message));
+}
+function clearBrandIcon(){ db.ref('/settings/brandIconURL').remove().then(renderAdminSettings); }
+
+function renderAdminGoogle(){
+  const el = $('admin-google');
+  const s = cachedSettings;
+  const row = (label, desc, key, on)=>`
+    <div class="admin-section" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
+      <div>
+        <div style="font-weight:600;font-size:1rem">${label}</div>
+        <div style="color:#888;font-size:.85rem;margin-top:.25rem">${desc}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;flex-shrink:0">
+        <div class="toggle-switch ${on?'on':''}" onclick="toggleLoginSetting('${key}')"></div>
+        <span style="font-size:.85rem;color:${on?'#16a34a':'#888'};min-width:60px">${on?'Enabled':'Disabled'}</span>
+      </div>
+    </div>`;
+  el.innerHTML = `<h2>Login Methods</h2>
+    <p style="color:#666;margin-bottom:1rem">Control how users can sign in to your site.</p>
+    ${row('Google Sign-In', 'Allow users to log in with their Google account.', 'googleLoginEnabled', !!s.googleLoginEnabled)}
+    ${row('GitHub Sign-In', 'Allow users to log in with their GitHub account.', 'githubLoginEnabled', !!s.githubLoginEnabled)}
+    ${row('Password Reset', 'Show "Forgot password?" link so users can reset via email.', 'passwordResetEnabled', !!s.passwordResetEnabled)}
+    <div style="margin-top:1rem;padding:.85rem 1rem;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;color:#9a3412;font-size:.85rem">
+      <strong>Note:</strong> Google and GitHub providers must also be enabled in your Firebase Console under Authentication → Sign-in method.
+    </div>`;
+  ic();
+}
+function toggleLoginSetting(key){
+  const next = !cachedSettings[key];
+  db.ref('/settings/'+key).set(next).then(()=>renderAdminGoogle());
+}
+
+/* ==========  INIT  ========== */
+window.addEventListener('scroll', ()=>{
+  const nb = document.getElementById('navbar'); if(!nb) return;
+  nb.style.boxShadow = window.scrollY>20 ? '0 8px 32px rgba(0,0,0,.12)' : '0 4px 24px rgba(0,0,0,.06)';
+});
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  ic();
+  renderSocial();
+  router();
+  // Wait for auth state then route once more if needed
+});
+
+// initial route immediately too
+router();
+ic();
+</script>
+</body>
+</html>
